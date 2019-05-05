@@ -1,14 +1,9 @@
 require: rubocop-rspec
 
 Metrics/LineLength:
-  Max: 125
-  Exclude:
-    - 'spec/**/*'
+  Max: 120
 
 Documentation:
-  Enabled: false
-
-NamedSubject:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
@@ -17,20 +12,8 @@ Style/FrozenStringLiteralComment:
 Style/ClassAndModuleChildren:
   Enabled: false
 
-Bundler/OrderedGems:
-  Enabled: false
-
-RSpec/MultipleExpectations:
-  Enabled: false
-
 Metrics/BlockLength:
-  ExcludedMethods: ['describe', 'ActiveAdmin.register']
-  Exclude:
-    - 'app/models/order.rb'
-
-Metrics/MethodLength:
-  Exclude:
-    - 'app/models/ability.rb'
+  ExcludedMethods: ['describe']
 
 AllCops:
   Exclude:
@@ -38,21 +21,3 @@ AllCops:
     - 'config/**/*'
     - 'db/migrate/**/*'
     - 'db/schema.rb'
-    - 'app/uploaders/**/*'
-
-Style/UnneededInterpolation:
-  Exclude:
-    - 'app/views/orders/**/*'
-
-Metrics/AbcSize:
-  Exclude:
-    - 'app/presenters/catalog_presenter.rb'
-    - 'app/controllers/users/registrations_controller.rb'
-    - 'app/services/checkout/form_variables_service.rb'
-    - 'app/decorators/book_decorator.rb'
-
-RSpec/MessageChain:
-  Enabled: false
-
-RSpec/AnyInstance:
-  Enabled: false

@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  post 'sign_up', controller: :users, action: :create
+  post 'sign_in', controller: :login, action: :create
+  delete 'log_out', controller: :login, action: :destroy
 end
