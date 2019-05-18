@@ -2,25 +2,30 @@ class ProjectsController < ApplicationController
   before_action :authorize_access_request!
 
   def create
-    # p user = User.find(payload['us  er_id'])
-    # p payload
-    p 22222222222222222
-    p current_user
-    # p session
-
-    # project = current_user.projects.new(project_params)
-    # p project
-    # project.save!
-    # render json: ProjectSerializer.new(project).serialized_json, status: :created
+    project = current_user.projects.new(project_params)
+    if project.save
+      render json: project, status: :created
+    else
+      render json: {}, status: :unprocessable_entity
+    end
   end
 
-  # def update
-  #
-  # end
-  #
-  # def destroy
-  #
-  # end
+  def update
+    project = Project.find_by(id: params[:id].to_i)
+    return render json: { error: 'error' }, status: :not_found unless project
+
+    project.update(name: params[:name])
+    render json: project, status: :ok
+  end
+
+  def destroy
+    project = Project.find_by(id: params[:id].to_i)
+    if project&.delete
+      head :no_content
+    else
+      render json: { error: 'error' }, status: :not_found
+    end
+  end
 
   private
 
