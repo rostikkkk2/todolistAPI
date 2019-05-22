@@ -11,7 +11,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    project = Project.find_by(id: params[:id].to_i)
+    project = current_user.projects.find_by(id: params[:id])
     return render json: { error: 'error' }, status: :not_found unless project
 
     project.update(name: params[:name])
@@ -19,12 +19,8 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    project = Project.find_by(id: params[:id].to_i)
-    if project&.delete
-      head :no_content
-    else
-      render json: { error: 'error' }, status: :not_found
-    end
+    current_user.projects.find_by(id: params[:id])&.destroy
+    head :no_content
   end
 
   private

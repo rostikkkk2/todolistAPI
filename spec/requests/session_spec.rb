@@ -16,7 +16,7 @@ RSpec.describe 'Session', type: :request do
 
     context 'when failed' do
       let(:user) { create(:user) }
-      let(:params) { { email: user.email, password: 'rostk' } }
+      let(:params) { { email: user.email, password: 'test' } }
 
       before { post '/sign_in', params: params }
 

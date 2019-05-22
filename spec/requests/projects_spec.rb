@@ -32,7 +32,7 @@ RSpec.describe 'Projects', type: :request do
     let(:project) { create(:project, user_id: user.id) }
     let(:headers) { authorization_header_for(user) }
 
-    context 'success' do
+    context 'when success' do
       let(:params) { { name: Faker::Lorem.word } }
 
       before { put project_path(project), params: params, headers: headers, as: :json }
@@ -42,7 +42,7 @@ RSpec.describe 'Projects', type: :request do
       end
     end
 
-    context 'failed' do
+    context 'when failed' do
       let(:failed_project_id) { project.id + 1 }
       let(:params) { {} }
 
@@ -60,20 +60,10 @@ RSpec.describe 'Projects', type: :request do
     let(:headers) { authorization_header_for(user) }
     let(:failed_project_id) { project.id + 1 }
 
-    context 'success' do
-      before { delete project_path(project), headers: headers, as: :json }
+    before { delete project_path(project), headers: headers, as: :json }
 
-      it 'delete project' do
-        expect(response).to have_http_status 204
-      end
-    end
-
-    context 'failed' do
-      before { delete project_path(failed_project_id), headers: headers, as: :json }
-
-      it 'not delete project' do
-        expect(response).to have_http_status 404
-      end
+    it 'delete project' do
+      expect(response).to have_http_status 204
     end
   end
 end
