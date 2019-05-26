@@ -2,48 +2,32 @@ class ApplicationPolicy
   attr_reader :user, :record
 
   def initialize(user, record)
+    raise Pundit::NotAuthorizedError unless user
+
     @user = user
     @record = record
   end
 
-  def index?
-    false
-  end
-
-  def show?
-    false
-  end
-
   def create?
-    false
-  end
-
-  def new?
-    create?
+    belongs_to_user?
   end
 
   def update?
-    false
-  end
-
-  def edit?
-    update?
+    belongs_to_user?
   end
 
   def destroy?
-    false
+    belongs_to_user?
   end
 
   class Scope
     attr_reader :user, :scope
 
     def initialize(user, scope)
+      raise Pundit::NotAuthorizedError unless user
+
       @user = user
       @scope = scope
-    end
-
-    def resolve
-      scope.all
     end
   end
 end

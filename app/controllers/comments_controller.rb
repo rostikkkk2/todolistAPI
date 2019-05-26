@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
 
   def create
     task = current_user.tasks.find_by(id: params[:task_id])
-    comment = task&.comments&.new(comment_params)
+    comment = authorize task&.comments&.new(comment_params)
     if comment&.save
       render json: CommentSerializer.new(comment).serialized_json, status: :created
     else

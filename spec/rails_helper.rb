@@ -13,6 +13,7 @@ require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
 # require 'dox'
+require 'pundit/matchers'
 require 'support/helpers'
 require 'rspec/rails'
 require 'database_cleaner'

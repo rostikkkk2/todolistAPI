@@ -41,11 +41,12 @@ group :development do
 end
 
 group :test do
-  gem 'dox', require: false
   gem 'database_cleaner'
+  gem 'dox', require: false
   gem 'factory_bot_rails'
-  gem 'shoulda-matchers'
   gem 'json_matchers', '~> 0.4.0'
+  gem 'pundit-matchers', '~> 1.6.0'
+  gem 'shoulda-matchers'
   gem 'simplecov'
 end
 

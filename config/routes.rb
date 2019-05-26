@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :tasks, shallow: true do
       resources :complete, only: :update
       resources :position, only: :update
-      resources :comments
+      resources :comments, only: %i[create destroy]
     end
   end
 end
