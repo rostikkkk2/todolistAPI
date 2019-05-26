@@ -10,6 +10,7 @@ RSpec.describe 'Users', type: :request do
 
       it 'create user by token' do
         expect(response).to be_created
+        expect(User.count).to eq(1)
       end
     end
 
@@ -21,6 +22,7 @@ RSpec.describe 'Users', type: :request do
 
       it 'create user by token' do
         expect(response).to have_http_status 422
+        expect(User.all).to be_empty
       end
     end
   end

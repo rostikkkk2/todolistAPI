@@ -7,16 +7,16 @@ gem 'acts_as_list'
 gem 'bcrypt', '~> 3.1.7'
 gem 'carrierwave', '~> 1.0'
 gem 'faker'
+gem 'fast_jsonapi'
 gem 'jbuilder', '~> 2.5'
 gem 'jwt_sessions'
-gem 'mini_magick'
+gem 'mini_magick', '~> 4.8'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'pundit'
 gem 'rack-cors'
 gem 'rails', '~> 5.2.3'
 gem 'redis', '~> 4.0'
-# gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

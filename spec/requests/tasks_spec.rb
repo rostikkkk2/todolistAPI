@@ -14,7 +14,7 @@ RSpec.describe 'Tasks', type: :request do
 
       it 'create task' do
         expect(response).to have_http_status 201
-        expect(Task.all.count).to eq(1)
+        expect(Task.count).to eq(1)
       end
     end
 
@@ -26,6 +26,7 @@ RSpec.describe 'Tasks', type: :request do
 
       it 'not create task' do
         expect(response).to have_http_status 422
+        expect(Task.all).to be_empty
       end
     end
   end
@@ -45,6 +46,7 @@ RSpec.describe 'Tasks', type: :request do
       it 'update task' do
         expect(response).to have_http_status 200
         expect(Task.first.deadline).to eq(params[:deadline])
+        expect(Task.first.name).to eq(params[:name])
       end
     end
 
@@ -69,6 +71,7 @@ RSpec.describe 'Tasks', type: :request do
 
     it 'destroy task' do
       expect(response).to have_http_status 204
+      expect(Task.all).to be_empty
     end
   end
 end

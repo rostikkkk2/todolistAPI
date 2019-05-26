@@ -5,7 +5,7 @@ class CommentsController < ApplicationController
     task = current_user.tasks.find_by(id: params[:task_id])
     comment = task&.comments&.new(comment_params)
     if comment&.save
-      render json: comment, status: :created
+      render json: CommentSerializer.new(comment).serialized_json, status: :created
     else
       render json: {}, status: :unprocessable_entity
     end

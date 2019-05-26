@@ -6,13 +6,13 @@ class TasksController < ApplicationController
     return render json: {}, status: :unprocessable_entity unless project
 
     task = project.tasks.new(task_params.merge(deadline: Time.now.next_day))
-    render json: task, status: :created if task.save && task.update(position: task.id)
+    render json: TaskSerializer.new(task).serialized_json, status: :created if task.save && task.update(position: task.id)
   end
 
   def update
     task = current_user.tasks.find_by(id: params[:id])
     if task&.update(task_params)
-      render json: task, status: :ok
+      render json: TaskSerializer.new(task).serialized_json, status: :ok
     else
       render json: {}, status: :not_found
     end

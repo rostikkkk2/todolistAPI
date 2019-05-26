@@ -11,6 +11,7 @@ RSpec.describe 'Projects', type: :request do
 
       it 'create project' do
         expect(response).to be_created
+        expect(user.projects.count).to eq(1)
       end
     end
 
@@ -23,6 +24,7 @@ RSpec.describe 'Projects', type: :request do
 
       it 'create project with wrong params' do
         expect(response).to have_http_status 422
+        expect(user.projects).to be_empty
       end
     end
   end
@@ -39,6 +41,7 @@ RSpec.describe 'Projects', type: :request do
 
       it 'update project' do
         expect(response).to have_http_status 200
+        expect(user.projects.first.name).to eq(params[:name])
       end
     end
 
@@ -64,6 +67,7 @@ RSpec.describe 'Projects', type: :request do
 
     it 'delete project' do
       expect(response).to have_http_status 204
+      expect(user.projects).to be_empty
     end
   end
 end

@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
   def create
     project = current_user.projects.new(project_params)
     if project.save
-      render json: project, status: :created
+      render json: ProjectSerializer.new(project).serialized_json, status: :created
     else
       render json: {}, status: :unprocessable_entity
     end
@@ -15,7 +15,7 @@ class ProjectsController < ApplicationController
     return render json: { error: 'error' }, status: :not_found unless project
 
     project.update(name: params[:name])
-    render json: project, status: :ok
+    render json: ProjectSerializer.new(project).serialized_json, status: :ok
   end
 
   def destroy

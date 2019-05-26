@@ -34,6 +34,7 @@ RSpec.describe 'Session', type: :request do
 
     it 'when destroy a session' do
       expect(response).to have_http_status 200
+      expect(response.cookies[JWTSessions.access_cookie]).not_to be_present
     end
   end
 end

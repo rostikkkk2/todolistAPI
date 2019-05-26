@@ -4,7 +4,7 @@ class PositionController < ApplicationController
   def update
     service = PositionTaskService.new(current_user, params)
     if service.call
-      render json: service.current_task, status: :ok
+      render json: TaskSerializer.new(service.current_task).serialized_json, status: :ok
     else
       render json: {}, status: :not_found
     end

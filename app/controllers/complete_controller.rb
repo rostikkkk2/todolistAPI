@@ -6,6 +6,6 @@ class CompleteController < ApplicationController
     return render json: {}, status: :not_found unless task
 
     task.complete? ? task.update(complete: false) : task.update(complete: true)
-    render json: task, status: :ok
+    render json: TaskSerializer.new(task).serialized_json, status: :ok
   end
 end

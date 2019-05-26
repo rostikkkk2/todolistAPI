@@ -14,6 +14,7 @@ RSpec.describe 'Comments', type: :request do
 
       it 'create comment' do
         expect(response).to be_created
+        expect(task.comments.count).to eq(1)
       end
     end
 
@@ -24,6 +25,7 @@ RSpec.describe 'Comments', type: :request do
 
       it 'not create comment' do
         expect(response).to have_http_status 422
+        expect(task.comments).to be_empty
       end
     end
   end
@@ -35,6 +37,7 @@ RSpec.describe 'Comments', type: :request do
 
     it 'destroy comment' do
       expect(response).to have_http_status 204
+      expect(task.comments).to be_empty
     end
   end
 end
