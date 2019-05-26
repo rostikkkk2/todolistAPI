@@ -4,10 +4,16 @@ RSpec.describe 'Projects', type: :request do
   describe 'POST #create' do
     context 'when success' do
       let(:user) { create(:user) }
-      let(:headers) { authorization_header_for(user) }
+
+      # let(:headers) { authorization_header_for(user) }
+      let(:tokens) { JWTSessions::Session.new(payload: { user_id: user.id }).login }
+      let(:headers_data) do
+        { 'HTTP_COOKIE': "#{JWTSessions.access_cookie}=#{tokens[:access]}", JWTSessions.csrf_header => tokens[:csrf] }
+      end
+
       let(:params) { { name: 'TodoList' } }
 
-      before { post projects_path, params: params, headers: headers, as: :json }
+      before { post projects_path, params: params, headers: headers_data, as: :json }
 
       it 'create project' do
         expect(response).to be_created
