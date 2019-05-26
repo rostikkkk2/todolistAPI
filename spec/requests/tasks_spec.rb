@@ -8,19 +8,21 @@ RSpec.describe 'Tasks', type: :request do
 
     context 'when success' do
       let(:attributes) { attributes_for(:task) }
-      let(:params) { { name: attributes[:name], project_id: project.id } }
+      let(:params) { { name: attributes[:name] } }
 
-      before { post tasks_path, headers: headers, params: params, as: :json }
+      before { post project_tasks_path(project_id: project.id), headers: headers, params: params, as: :json }
 
       it 'create task' do
         expect(response).to have_http_status 201
+        expect(Task.all.count).to eq(1)
       end
     end
 
     context 'when failed' do
+      let(:fail_project_id) { project.id + 1 }
       let(:params) { {} }
 
-      before { post tasks_path, headers: headers, params: params, as: :json }
+      before { post project_tasks_path(fail_project_id), headers: headers, params: params, as: :json }
 
       it 'not create task' do
         expect(response).to have_http_status 422
@@ -36,12 +38,13 @@ RSpec.describe 'Tasks', type: :request do
 
     context 'when success' do
       let(:attributes) { attributes_for(:task) }
-      let(:params) { { name: attributes[:name] } }
+      let(:params) { { name: attributes[:name], deadline: Time.now.next_week } }
 
       before { put task_path(task), headers: headers, params: params, as: :json }
 
       it 'update task' do
         expect(response).to have_http_status 200
+        expect(Task.first.deadline).to eq(params[:deadline])
       end
     end
 
@@ -51,7 +54,7 @@ RSpec.describe 'Tasks', type: :request do
       before { put task_path(task), headers: headers, params: params, as: :json }
 
       it 'not update task' do
-        expect(response).to have_http_status 422
+        expect(response).to have_http_status 404
       end
     end
   end

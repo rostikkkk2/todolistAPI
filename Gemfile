@@ -3,10 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.3'
 
+gem 'acts_as_list'
 gem 'bcrypt', '~> 3.1.7'
+gem 'carrierwave', '~> 1.0'
 gem 'faker'
 gem 'jbuilder', '~> 2.5'
 gem 'jwt_sessions'
+gem 'mini_magick'
 gem 'pg'
 gem 'puma', '~> 3.11'
 gem 'pundit'

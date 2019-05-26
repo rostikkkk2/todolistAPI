@@ -5,16 +5,16 @@ class TasksController < ApplicationController
     project = current_user.projects.find_by(id: params[:project_id])
     return render json: {}, status: :unprocessable_entity unless project
 
-    task = project.tasks.new(task_params)
-    render json: task, status: :created if task.save
+    task = project.tasks.new(task_params.merge(deadline: Time.now.next_day))
+    render json: task, status: :created if task.save && task.update(position: task.id)
   end
 
   def update
     task = current_user.tasks.find_by(id: params[:id])
-    if task&.update(name: params[:name])
+    if task&.update(task_params)
       render json: task, status: :ok
     else
-      render json: {}, status: :unprocessable_entity
+      render json: {}, status: :not_found
     end
   end
 
@@ -24,6 +24,6 @@ class TasksController < ApplicationController
   end
 
   def task_params
-    params.permit(:name, :project_id)
+    params.permit(:name, :deadline)
   end
 end

@@ -8,9 +8,9 @@ RSpec.describe 'Comments', type: :request do
 
   describe 'POST #create' do
     context 'when success' do
-      let(:params) { { body: 'test comment', task_id: task.id } }
+      let(:params) { { body: 'test comment' } }
 
-      before { post comments_path, headers: headers, params: params, as: :json }
+      before { post task_comments_path(task_id: task.id), headers: headers, params: params, as: :json }
 
       it 'create comment' do
         expect(response).to be_created
@@ -18,9 +18,9 @@ RSpec.describe 'Comments', type: :request do
     end
 
     context 'when failed' do
-      let(:params) { { body: '', task_id: task.id } }
+      let(:params) { { body: '' } }
 
-      before { post comments_path, headers: headers, params: params, as: :json }
+      before { post task_comments_path(task_id: task.id), headers: headers, params: params, as: :json }
 
       it 'not create comment' do
         expect(response).to have_http_status 422
