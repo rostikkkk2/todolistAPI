@@ -1,7 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Tasks', type: :request do
+  include Docs::V1::Tasks::Api
+
   describe 'POST #create' do
+    include Docs::V1::Tasks::Create
+
     let(:user) { create(:user) }
     let(:project) { create(:project, user_id: user.id) }
     let(:headers) { authorization_header_for(user) }
@@ -10,28 +14,30 @@ RSpec.describe 'Tasks', type: :request do
       let(:attributes) { attributes_for(:task) }
       let(:params) { { name: attributes[:name] } }
 
-      before { post project_tasks_path(project_id: project.id), headers: headers, params: params, as: :json }
+      before { post api_v1_project_tasks_path(project_id: project.id), headers: headers, params: params, as: :json }
 
-      it 'create task' do
+      it 'create task', :dox do
         expect(response).to have_http_status 201
-        expect(Task.count).to eq(1)
       end
+      it { expect(Task.count).to eq(1) }
     end
 
     context 'when failed' do
       let(:fail_project_id) { project.id + 1 }
       let(:params) { {} }
 
-      before { post project_tasks_path(fail_project_id), headers: headers, params: params, as: :json }
+      before { post api_v1_project_tasks_path(fail_project_id), headers: headers, params: params, as: :json }
 
-      it 'not create task' do
+      it 'not create task', :dox do
         expect(response).to have_http_status 422
-        expect(Task.all).to be_empty
       end
+      it { expect(Task.all).to be_empty }
     end
   end
 
   describe 'PUT #update' do
+    include Docs::V1::Tasks::Update
+
     let(:user) { create(:user) }
     let(:project) { create(:project, user_id: user.id) }
     let(:task) { create(:task, project_id: project.id) }
@@ -41,37 +47,39 @@ RSpec.describe 'Tasks', type: :request do
       let(:attributes) { attributes_for(:task) }
       let(:params) { { name: attributes[:name], deadline: Time.now.next_week } }
 
-      before { put task_path(task), headers: headers, params: params, as: :json }
+      before { put api_v1_task_path(task), headers: headers, params: params, as: :json }
 
-      it 'update task' do
+      it 'update task', :dox do
         expect(response).to have_http_status 200
-        expect(Task.first.deadline).to eq(params[:deadline])
-        expect(Task.first.name).to eq(params[:name])
       end
+      it { expect(Task.first.deadline).to eq(params[:deadline]) }
+      it { expect(Task.first.name).to eq(params[:name]) }
     end
 
     context 'when failed' do
       let(:params) { { name: '' } }
 
-      before { put task_path(task), headers: headers, params: params, as: :json }
+      before { put api_v1_task_path(task), headers: headers, params: params, as: :json }
 
-      it 'not update task' do
+      it 'not update task', :dox do
         expect(response).to have_http_status 404
       end
     end
   end
 
   describe 'DELETE #destroy' do
+    include Docs::V1::Tasks::Destroy
+
     let(:user) { create(:user) }
     let(:project) { create(:project, user_id: user.id) }
     let(:task) { create(:task, project_id: project.id) }
     let(:headers) { authorization_header_for(user) }
 
-    before { delete task_path(task), headers: headers, as: :json }
+    before { delete api_v1_task_path(task), headers: headers, as: :json }
 
-    it 'destroy task' do
+    it 'destroy task', :dox do
       expect(response).to have_http_status 204
-      expect(Task.all).to be_empty
     end
+    it { expect(Task.all).to be_empty }
   end
 end

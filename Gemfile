@@ -42,7 +42,7 @@ end
 
 group :test do
   gem 'database_cleaner'
-  gem 'dox', require: false
+  gem 'dox', '~> 1.1', require: false
   gem 'factory_bot_rails'
   gem 'json_matchers', '~> 0.4.0'
   gem 'pundit-matchers', '~> 1.6.0'

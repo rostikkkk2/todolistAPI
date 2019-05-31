@@ -1,15 +1,19 @@
 require 'rails_helper'
 
 RSpec.describe 'Session', type: :request do
+  include Docs::V1::Session::Api
+
   describe 'POST #create' do
+    include Docs::V1::Session::Create
+
     context 'when success' do
       let(:user) { create(:user) }
       let(:headers) { authorization_header_for(user) }
       let(:params) { { email: user.email, password: user.password } }
 
-      before { post '/sign_in', params: params, headers: headers, as: :json }
+      before { post api_v1_sign_in_path, params: params, headers: headers, as: :json }
 
-      it 'create user by token' do
+      it 'create user by token', :dox do
         expect(response).to have_http_status 200
       end
     end
@@ -18,23 +22,26 @@ RSpec.describe 'Session', type: :request do
       let(:user) { create(:user) }
       let(:params) { { email: user.email, password: 'test' } }
 
-      before { post '/sign_in', params: params }
+      before { post api_v1_sign_in_path, params: params }
 
-      it 'create user by token' do
+      it 'create user by token', :dox do
         expect(response).to have_http_status 401
       end
     end
   end
 
   describe 'DELETE #destroy' do
+    include Docs::V1::Session::Destroy
+
     let(:user) { create(:user) }
     let(:headers) { authorization_header_for(user) }
 
-    before { delete '/log_out', headers: headers, as: :json }
+    before { delete api_v1_log_out_path, headers: headers, as: :json }
 
-    it 'when destroy a session' do
+    it 'when destroy a session', :dox do
       expect(response).to have_http_status 200
-      expect(response.cookies[JWTSessions.access_cookie]).not_to be_present
     end
+
+    it { expect(response.cookies[JWTSessions.access_cookie]).not_to be_present }
   end
 end
