@@ -25,7 +25,7 @@ RSpec.describe 'Users', type: :request do
       before { post api_v1_sign_up_path, params: params, as: :json }
 
       it 'create user by token', :dox do
-        expect(response).to have_http_status 422
+        expect(response).to have_http_status :unprocessable_entity
       end
       it { expect(User.all).to be_empty }
     end

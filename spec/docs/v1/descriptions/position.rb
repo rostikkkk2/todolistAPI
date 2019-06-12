@@ -4,9 +4,9 @@ module Docs
       extend Dox::DSL::Syntax
 
       document :api do
-        resource 'Position' do
-          endpoint '/position'
-          group 'Position'
+        resource 'Task::Position' do
+          endpoint 'task/position'
+          group 'Task::Position'
         end
       end
 

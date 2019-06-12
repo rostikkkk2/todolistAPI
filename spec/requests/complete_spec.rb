@@ -15,7 +15,7 @@ RSpec.describe 'Complete', type: :request do
       before { patch api_v1_complete_path(task), headers: headers, as: :json }
 
       it 'when do complete task', :dox do
-        expect(response).to have_http_status 200
+        expect(response).to have_http_status :ok
       end
       it { expect(Task.first.complete).to eq(true) }
     end
@@ -26,7 +26,7 @@ RSpec.describe 'Complete', type: :request do
       before { patch api_v1_complete_path(task_complete), headers: headers, as: :json }
 
       it 'when do not complete task', :dox do
-        expect(response).to have_http_status 200
+        expect(response).to have_http_status :ok
       end
       it { expect(Task.first.complete).to eq(false) }
     end
@@ -37,7 +37,7 @@ RSpec.describe 'Complete', type: :request do
       before { patch api_v1_complete_path(fail_id_task), headers: headers, as: :json }
 
       it 'fail complete task', :dox do
-        expect(response).to have_http_status 404
+        expect(response).to have_http_status :not_found
       end
       it { expect(Task.first.complete).to eq(false) }
     end

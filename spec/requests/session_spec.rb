@@ -14,7 +14,7 @@ RSpec.describe 'Session', type: :request do
       before { post api_v1_sign_in_path, params: params, headers: headers, as: :json }
 
       it 'create user by token', :dox do
-        expect(response).to have_http_status 200
+        expect(response).to have_http_status :ok
       end
     end
 
@@ -25,7 +25,7 @@ RSpec.describe 'Session', type: :request do
       before { post api_v1_sign_in_path, params: params }
 
       it 'create user by token', :dox do
-        expect(response).to have_http_status 401
+        expect(response).to have_http_status :unauthorized
       end
     end
   end
@@ -39,7 +39,7 @@ RSpec.describe 'Session', type: :request do
     before { delete api_v1_log_out_path, headers: headers, as: :json }
 
     it 'when destroy a session', :dox do
-      expect(response).to have_http_status 200
+      expect(response).to have_http_status :ok
     end
 
     it { expect(response.cookies[JWTSessions.access_cookie]).not_to be_present }

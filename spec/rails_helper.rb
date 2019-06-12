@@ -1,13 +1,6 @@
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
 
-require 'simplecov'
-
-SimpleCov.start do
-  add_filter '/spec/'
-  minimum_coverage 95
-end
-
 require File.expand_path('../../config/environment', __FILE__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
 
@@ -19,6 +12,8 @@ require 'database_cleaner'
 require 'faker'
 
 Dir[Rails.root.join('spec/docs/**/*.rb')].each { |f| require f }
+
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!

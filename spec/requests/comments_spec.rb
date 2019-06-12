@@ -14,7 +14,7 @@ RSpec.describe 'Comments', type: :request do
     context 'when success' do
       let(:params) { { body: 'test comment' } }
 
-      before { post api_v1_task_comments_path(task_id: task.id), headers: headers, params: params, as: :json }
+      before { post api_v1_task_comments_path(task.id, id: task), headers: headers, params: params, as: :json }
 
       it 'create comment', :dox do
         expect(response).to be_created
@@ -25,10 +25,10 @@ RSpec.describe 'Comments', type: :request do
     context 'when failed' do
       let(:params) { { body: '' } }
 
-      before { post api_v1_task_comments_path(task_id: task.id), headers: headers, params: params, as: :json }
+      before { post api_v1_task_comments_path(task.id, id: task), headers: headers, params: params, as: :json }
 
       it 'not create comment', :dox do
-        expect(response).to have_http_status 422
+        expect(response).to have_http_status :unprocessable_entity
       end
       it { expect(task.comments).to be_empty }
     end
@@ -39,11 +39,24 @@ RSpec.describe 'Comments', type: :request do
 
     let(:comment) { create(:comment, task_id: task.id) }
 
-    before { delete api_v1_comment_path(comment), headers: headers, as: :json }
+    context 'when success destroy comment' do
+      before { delete api_v1_comment_path(comment), headers: headers, as: :json }
 
-    it 'destroy comment', :dox do
-      expect(response).to have_http_status 204
+      it 'destroy comment', :dox do
+        expect(response).to have_http_status :no_content
+      end
+      it { expect(task.comments).to be_empty }
     end
-    it { expect(task.comments).to be_empty }
+
+    context 'when failed destroy comment' do
+      let(:failed_comment_id) { comment.id + 1 }
+
+      before { delete api_v1_comment_path(failed_comment_id), headers: headers, as: :json }
+
+      it 'not destroy comment', :dox do
+        expect(response).to have_http_status :not_found
+      end
+      it { expect(task.comments).not_to be_empty }
+    end
   end
 end

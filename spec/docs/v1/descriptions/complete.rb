@@ -4,9 +4,9 @@ module Docs
       extend Dox::DSL::Syntax
 
       document :api do
-        resource 'Complete' do
-          endpoint '/complete'
-          group 'Complete'
+        resource 'Task::Complete' do
+          endpoint 'task/complete'
+          group 'Task::Complete'
         end
       end
 

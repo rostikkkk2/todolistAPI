@@ -4,9 +4,9 @@ module Docs
       extend Dox::DSL::Syntax
 
       document :api do
-        resource 'Session' do
+        resource 'Authorize::Session' do
           endpoint '/session'
-          group 'Session'
+          group 'Authorize'
         end
       end
 

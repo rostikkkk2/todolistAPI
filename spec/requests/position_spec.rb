@@ -19,7 +19,7 @@ RSpec.describe 'Position Task', type: :request do
       before { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
 
       it 'task position up', :dox do
-        expect(response).to have_http_status 200
+        expect(response).to have_http_status :ok
       end
       it { expect(Task.find_by(id: task2.id).position).to eq(1) }
       it { expect(Task.find_by(id: task1.id).position).to eq(2) }
@@ -31,19 +31,20 @@ RSpec.describe 'Position Task', type: :request do
       before { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
 
       it 'task position down', :dox do
-        expect(response).to have_http_status 200
+        expect(response).to have_http_status :ok
       end
       it { expect(Task.find_by(id: task2.id).position).to eq(3) }
       it { expect(Task.find_by(id: task3.id).position).to eq(2) }
     end
 
     context 'when failure' do
+      let(:fail_task_id) { 5 }
       let(:params) { {} }
 
-      before { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
+      before { put api_v1_position_path(fail_task_id), params: params, headers: headers, as: :json }
 
       it 'return 404', :dox do
-        expect(response).to have_http_status 404
+        expect(response).to have_http_status :not_found
       end
     end
   end

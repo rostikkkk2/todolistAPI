@@ -4,9 +4,9 @@ module Docs
       extend Dox::DSL::Syntax
 
       document :api do
-        resource 'Comments' do
-          endpoint '/comment'
-          group 'Comments'
+        resource 'Task::Comments' do
+          endpoint 'task/comment'
+          group 'Task::Comments'
         end
       end
 
