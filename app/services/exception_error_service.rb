@@ -1,17 +1,15 @@
 class ExceptionErrorService
-  attr_reader :status, :message, :id
+  attr_reader :attribute, :message
 
-  def initialize(status, message, id = nil)
-    @status = status
+  def initialize(attribute, message)
+    @attribute = attribute
     @message = message
-    @id = id || ''
   end
 
   def serializable_hash
     {
-      source: { pointer: 'data/attributes' },
-      detail: message,
-      id: id
+      source: { pointer: attribute },
+      detail: message
     }
   end
 end

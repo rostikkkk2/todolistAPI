@@ -12,20 +12,26 @@ RSpec.describe 'Comments', type: :request do
     include Docs::V1::Comments::Create
 
     context 'when success' do
-      let(:params) { { body: 'test comment' } }
+      let(:params) do
+        {
+          photo: fixture_file_upload('image_for_comment.jpg'),
+          body: 'test comment'
+        }
+      end
 
-      before { post api_v1_task_comments_path(task.id, id: task), headers: headers, params: params, as: :json }
+      before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
 
       it 'create comment', :dox do
         expect(response).to be_created
+        expect(task.comments.first.photo.path.split('/').last).to eq('image_for_comment.jpg')
+        expect(task.comments.count).to eq(1)
       end
-      it { expect(task.comments.count).to eq(1) }
     end
 
     context 'when failed' do
       let(:params) { { body: '' } }
 
-      before { post api_v1_task_comments_path(task.id, id: task), headers: headers, params: params, as: :json }
+      before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params, as: :json }
 
       it 'not create comment', :dox do
         expect(response).to have_http_status :unprocessable_entity
@@ -34,7 +40,7 @@ RSpec.describe 'Comments', type: :request do
     end
   end
 
-  describe 'POST #destroy' do
+  describe 'DELETE #destroy' do
     include Docs::V1::Comments::Destroy
 
     let(:comment) { create(:comment, task_id: task.id) }

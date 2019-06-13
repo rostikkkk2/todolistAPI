@@ -7,9 +7,11 @@ class EntityErrorService
   end
 
   def serializable_hash
-    {
-      source: { pointer: 'data/attributes' },
-      detail: errors
-    }
+    errors.messages.map do |attribute, message|
+      {
+        source: { pointer: "data/attributes/#{attribute}" },
+        detail: message
+      }
+    end
   end
 end

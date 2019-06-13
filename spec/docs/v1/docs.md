@@ -20,7 +20,7 @@
     + Body
 
             {
-              "email": "damian@reichertjohnston.com",
+              "email": "jeffrey@denesik.co",
               "password": "Password1"
             }
 
@@ -33,11 +33,11 @@
     + Body
 
             {
-              "csrf": "EXAWW7mQy0mQ41vk5Q7xnz7ve6U8V7gQVjm2nn8+hrAo0kTGJUwivWH9phmqc7Ia5oZ0SvCdYM/EoiuYsRxwow==",
-              "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjAzNDg2MTAsInVzZXJfaWQiOjEsInVpZCI6IjA3ZWUyMGYwLTJmZDMtNGIxOC04YTk1LWZiODI0NWUxNTcyOCIsImV4cCI6MTU2MDM0ODYxMCwicnVpZCI6ImIzMzJkYmJlLTU1Y2UtNDc2Yi04NDcxLTJiYWI4OGFmNzlmYiJ9.F56nebNui1uGiRaGEr6avDwpf_bgDMgQXsLs0TRDa5E",
-              "access_expires_at": "2019-06-12T17:10:10.000+03:00",
-              "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjAzNDg2MTAsInVpZCI6ImIzMzJkYmJlLTU1Y2UtNDc2Yi04NDcxLTJiYWI4OGFmNzlmYiIsImV4cCI6MTU2MDk0OTgxMH0.zSEo8u9YouLESG4xiteBJgODjCGLbbzl-r03nvY-pdQ",
-              "refresh_expires_at": "2019-06-19T16:10:10.000+03:00"
+              "csrf": "J1PWh9WEEN8xjl0RW60m2eN6Pgz0Jz6ZptrPxca/1/1yZELhymku/eC+NvTtp2dZeUxgJjltCoq343yow0Q6fQ==",
+              "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA0NDc1NjEsInVzZXJfaWQiOjEsInVpZCI6ImY3ZDBlNWVjLWFiM2MtNDgxMy1iNzNkLWMwODc3NGNhYjU3MyIsImV4cCI6MTU2MDQ0NzU2MSwicnVpZCI6IjI5OWI1OWVjLWI5YTYtNGRlMC04OTBmLTI4MmU1NjYwYjEwMCJ9.vqXOAWRCXDdnZPf6eiynd9UHx82FP54ogupO2EYtvVc",
+              "access_expires_at": "2019-06-13T20:39:21.000+03:00",
+              "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA0NDc1NjEsInVpZCI6IjI5OWI1OWVjLWI5YTYtNGRlMC04OTBmLTI4MmU1NjYwYjEwMCIsImV4cCI6MTU2MTA0ODc2MX0.doH-OFSynEuChZivdqstD_7Ycj7uzVFCLCtvgpA_hNQ",
+              "refresh_expires_at": "2019-06-20T19:39:21.000+03:00"
             }
 
 + Request create user by token
@@ -50,7 +50,7 @@
 
     + Body
 
-            email=travis%40wisozk.com&password=test
+            email=fabian%40brown.org&password=test
 
 + Response 401
 
@@ -165,13 +165,11 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "data/attributes/name"
                   },
-                  "detail": {
-                    "name": [
-                      "can't be blank"
-                    ]
-                  }
+                  "detail": [
+                    "can't be blank"
+                  ]
                 }
               ]
             }
@@ -192,7 +190,7 @@
     + Body
 
             {
-              "name": "beatae"
+              "name": "rerum"
             }
 
 + Response 200
@@ -208,7 +206,7 @@
                 "id": "2",
                 "type": "project",
                 "attributes": {
-                  "name": "beatae"
+                  "name": "rerum"
                 },
                 "relationships": {
                   "user": {
@@ -252,13 +250,11 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "data/attributes/name"
                   },
-                  "detail": {
-                    "name": [
-                      "can't be blank"
-                    ]
-                  }
+                  "detail": [
+                    "can't be blank"
+                  ]
                 }
               ]
             }
@@ -289,10 +285,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/projects/5"
                   },
-                  "detail": "not_found",
-                  "id": "5"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -332,10 +327,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/projects/8"
                   },
-                  "detail": "not_found",
-                  "id": "8"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -356,14 +350,12 @@
 
     + Headers
 
-            Accept: application/json
-            Content-Type: application/json
+            Accept: text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5
+            Content-Type: application/x-www-form-urlencoded
 
     + Body
 
-            {
-              "body": "test comment"
-            }
+            body=test+comment
 
 + Response 201
 
@@ -423,13 +415,11 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "data/attributes/body"
                   },
-                  "detail": {
-                    "body": [
-                      "can't be blank"
-                    ]
-                  }
+                  "detail": [
+                    "can't be blank"
+                  ]
                 }
               ]
             }
@@ -469,10 +459,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/comments/4"
                   },
-                  "detail": "not_found",
-                  "id": "4"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -509,8 +498,8 @@
                 "id": "1",
                 "type": "task",
                 "attributes": {
-                  "name": "quaerat",
-                  "deadline": "2019-06-13T13:10:09.653Z",
+                  "name": "omnis",
+                  "deadline": "2019-06-14T16:39:21.101Z",
                   "complete": true,
                   "position": 1
                 },
@@ -551,8 +540,8 @@
                 "id": "2",
                 "type": "task",
                 "attributes": {
-                  "name": "rem",
-                  "deadline": "2019-06-13T13:10:09.688Z",
+                  "name": "praesentium",
+                  "deadline": "2019-06-14T16:39:21.131Z",
                   "complete": false,
                   "position": 1
                 },
@@ -592,10 +581,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/complete/4"
                   },
-                  "detail": "not_found",
-                  "id": "4"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -638,8 +626,8 @@
                 "id": "2",
                 "type": "task",
                 "attributes": {
-                  "name": "cum",
-                  "deadline": "2019-06-13T13:10:09.820Z",
+                  "name": "quasi",
+                  "deadline": "2019-06-14T16:39:21.257Z",
                   "complete": false,
                   "position": 1
                 },
@@ -686,8 +674,8 @@
                 "id": "5",
                 "type": "task",
                 "attributes": {
-                  "name": "praesentium",
-                  "deadline": "2019-06-13T13:10:09.862Z",
+                  "name": "quod",
+                  "deadline": "2019-06-14T16:39:21.302Z",
                   "complete": false,
                   "position": 3
                 },
@@ -731,10 +719,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/position/5"
                   },
-                  "detail": "not_found",
-                  "id": "5"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -761,7 +748,7 @@
     + Body
 
             {
-              "name": "et"
+              "name": "ea"
             }
 
 + Response 201
@@ -777,8 +764,8 @@
                 "id": "1",
                 "type": "task",
                 "attributes": {
-                  "name": "et",
-                  "deadline": "2019-06-13T13:10:10.324Z",
+                  "name": "ea",
+                  "deadline": "2019-06-14T16:39:21.748Z",
                   "complete": false,
                   "position": 1
                 },
@@ -822,10 +809,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/projects/3/tasks"
                   },
-                  "detail": "not_found",
-                  "id": ""
+                  "detail": "Not found"
                 }
               ]
             }
@@ -856,13 +842,11 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "data/attributes/name"
                   },
-                  "detail": {
-                    "name": [
-                      "can't be blank"
-                    ]
-                  }
+                  "detail": [
+                    "can't be blank"
+                  ]
                 }
               ]
             }
@@ -883,7 +867,7 @@
     + Body
 
             {
-              "name": "sunt",
+              "name": "ex",
               "deadline": "2019-06-17T00:00:00.000+03:00"
             }
 
@@ -900,7 +884,7 @@
                 "id": "2",
                 "type": "task",
                 "attributes": {
-                  "name": "sunt",
+                  "name": "ex",
                   "deadline": "2019-06-16T21:00:00.000Z",
                   "complete": false,
                   "position": 1
@@ -945,10 +929,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/tasks/4"
                   },
-                  "detail": "not_found",
-                  "id": "4"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -979,13 +962,11 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "data/attributes/name"
                   },
-                  "detail": {
-                    "name": [
-                      "can't be blank"
-                    ]
-                  }
+                  "detail": [
+                    "can't be blank"
+                  ]
                 }
               ]
             }
@@ -1025,10 +1006,9 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "/api/v1/tasks/7"
                   },
-                  "detail": "not_found",
-                  "id": "7"
+                  "detail": "Not found"
                 }
               ]
             }
@@ -1053,7 +1033,7 @@
     + Body
 
             {
-              "email": "teddykuvalis@bradtke.net",
+              "email": "kory@schneider.co",
               "password": "Password1",
               "password_confirmation": "Password1"
             }
@@ -1068,10 +1048,10 @@
 
             {
               "id": 1,
-              "email": "teddykuvalis@bradtke.net",
-              "password_digest": "$2a$04$5/W/6NQQ/eMMV8EirGTgxenNyiMe1kREJat4zcIOoQ0nLLW3bxbY.",
-              "created_at": "2019-06-12T13:10:10.535Z",
-              "updated_at": "2019-06-12T13:10:10.535Z"
+              "email": "kory@schneider.co",
+              "password_digest": "$2a$04$q6E7Lz4UAgQAl9lFuwZX0eAoZhhahubms2lZCNMOvMfkhlPNPtU7e",
+              "created_at": "2019-06-13T16:39:21.962Z",
+              "updated_at": "2019-06-13T16:39:21.962Z"
             }
 
 + Request create user by token
@@ -1098,16 +1078,19 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "data/attributes"
+                    "pointer": "data/attributes/password"
                   },
-                  "detail": {
-                    "password": [
-                      "can't be blank"
-                    ],
-                    "email": [
-                      "can't be blank"
-                    ]
-                  }
+                  "detail": [
+                    "can't be blank"
+                  ]
+                },
+                {
+                  "source": {
+                    "pointer": "data/attributes/email"
+                  },
+                  "detail": [
+                    "can't be blank"
+                  ]
                 }
               ]
             }

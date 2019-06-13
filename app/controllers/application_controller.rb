@@ -17,8 +17,8 @@ class ApplicationController < ActionController::API
   end
 
   def not_found_error
-    service = ExceptionErrorService.new(:not_found, 'not_found', params[:id])
-    render json: ErrorSerializer.new(service), status: service.status
+    service = ExceptionErrorService.new(request.path, 'Not found')
+    render json: ErrorSerializer.new(service), status: :not_found
   end
 
   def entity_error(status, errors)

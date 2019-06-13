@@ -1,15 +1,15 @@
 <!DOCTYPE html><html><head><meta charset="utf-8"><title>API Documentation</title><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"><style>@import url('https://fonts.googleapis.com/css?family=Roboto:400,700|Inconsolata|Raleway:200');.hljs-comment,.hljs-title{color:#8e908c}.hljs-variable,.hljs-attribute,.hljs-tag,.hljs-regexp,.ruby .hljs-constant,.xml .hljs-tag .hljs-title,.xml .hljs-pi,.xml .hljs-doctype,.html .hljs-doctype,.css .hljs-id,.css .hljs-class,.css .hljs-pseudo{color:#c82829}.hljs-number,.hljs-preprocessor,.hljs-pragma,.hljs-built_in,.hljs-literal,.hljs-params,.hljs-constant{color:#f5871f}.ruby .hljs-class .hljs-title,.css .hljs-rules .hljs-attribute{color:#eab700}.hljs-string,.hljs-value,.hljs-inheritance,.hljs-header,.ruby .hljs-symbol,.xml .hljs-cdata{color:#718c00}.css .hljs-hexcolor{color:#3e999f}.hljs-function,.python .hljs-decorator,.python .hljs-title,.ruby .hljs-function .hljs-title,.ruby .hljs-title .hljs-keyword,.perl .hljs-sub,.javascript .hljs-title,.coffeescript .hljs-title{color:#4271ae}.hljs-keyword,.javascript .hljs-function{color:#8959a8}.hljs{display:block;background:white;color:#4d4d4c;padding:.5em}.coffeescript .javascript,.javascript .xml,.tex .hljs-formula,.xml .javascript,.xml .vbscript,.xml .css,.xml .hljs-cdata{opacity:.5}.right .hljs-comment{color:#969896}.right .css .hljs-class,.right .css .hljs-id,.right .css .hljs-pseudo,.right .hljs-attribute,.right .hljs-regexp,.right .hljs-tag,.right .hljs-variable,.right .html .hljs-doctype,.right .ruby .hljs-constant,.right .xml .hljs-doctype,.right .xml .hljs-pi,.right .xml .hljs-tag .hljs-title{color:#c66}.right .hljs-built_in,.right .hljs-constant,.right .hljs-literal,.right .hljs-number,.right .hljs-params,.right .hljs-pragma,.right .hljs-preprocessor{color:#de935f}.right .css .hljs-rule .hljs-attribute,.right .ruby .hljs-class .hljs-title{color:#f0c674}.right .hljs-header,.right .hljs-inheritance,.right .hljs-name,.right .hljs-string,.right .hljs-value,.right .ruby .hljs-symbol,.right .xml .hljs-cdata{color:#b5bd68}.right .css .hljs-hexcolor,.right .hljs-title{color:#8abeb7}.right .coffeescript .hljs-title,.right .hljs-function,.right .javascript .hljs-title,.right .perl .hljs-sub,.right .python .hljs-decorator,.right .python .hljs-title,.right .ruby .hljs-function .hljs-title,.right .ruby .hljs-title .hljs-keyword{color:#81a2be}.right .hljs-keyword,.right .javascript .hljs-function{color:#b294bb}.right .hljs{display:block;overflow-x:auto;background:#1d1f21;color:#c5c8c6;padding:.5em;-webkit-text-size-adjust:none}.right .coffeescript .javascript,.right .javascript .xml,.right .tex .hljs-formula,.right .xml .css,.right .xml .hljs-cdata,.right .xml .javascript,.right .xml .vbscript{opacity:.5}body{color:black;background:white;font:400 14px / 1.42 'Roboto',Helvetica,sans-serif}header{border-bottom:1px solid #f2f2f2;margin-bottom:12px}h1,h2,h3,h4,h5{color:black;margin:12px 0}h1 .permalink,h2 .permalink,h3 .permalink,h4 .permalink,h5 .permalink{margin-left:0;opacity:0;transition:opacity .25s ease}h1:hover .permalink,h2:hover .permalink,h3:hover .permalink,h4:hover .permalink,h5:hover .permalink{opacity:1}.triple h1 .permalink,.triple h2 .permalink,.triple h3 .permalink,.triple h4 .permalink,.triple h5 .permalink{opacity:.15}.triple h1:hover .permalink,.triple h2:hover .permalink,.triple h3:hover .permalink,.triple h4:hover .permalink,.triple h5:hover .permalink{opacity:.15}h1{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:36px}h2{font:200 36px 'Raleway',Helvetica,sans-serif;font-size:30px}h3{font-size:100%;text-transform:uppercase}h5{font-size:100%;font-weight:normal}p{margin:0 0 10px}p.choices{line-height:1.6}a{color:#428bca;text-decoration:none}li p{margin:0}hr.split{border:0;height:1px;width:100%;padding-left:6px;margin:12px auto;background-image:linear-gradient(to right, rgba(0,0,0,0) 20%, rgba(0,0,0,0.2) 51.4%, rgba(255,255,255,0.2) 51.4%, rgba(255,255,255,0) 80%)}dl dt{float:left;width:130px;clear:left;text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:700}dl dd{margin-left:150px}blockquote{color:rgba(0,0,0,0.5);font-size:15.5px;padding:10px 20px;margin:12px 0;border-left:5px solid #e8e8e8}blockquote p:last-child{margin-bottom:0}pre{background-color:#f5f5f5;padding:12px;border:1px solid #cfcfcf;border-radius:6px;overflow:auto}pre code{color:black;background-color:transparent;padding:0;border:none}code{color:#444;background-color:#f5f5f5;font:'Inconsolata',monospace;padding:1px 4px;border:1px solid #cfcfcf;border-radius:3px}ul,ol{padding-left:2em}table{border-collapse:collapse;border-spacing:0;margin-bottom:12px}table tr:nth-child(2n){background-color:#fafafa}table th,table td{padding:6px 12px;border:1px solid #e6e6e6}.text-muted{opacity:.5}.note,.warning{padding:.3em 1em;margin:1em 0;border-radius:2px;font-size:90%}.note h1,.warning h1,.note h2,.warning h2,.note h3,.warning h3,.note h4,.warning h4,.note h5,.warning h5,.note h6,.warning h6{font-family:200 36px 'Raleway',Helvetica,sans-serif;font-size:135%;font-weight:500}.note p,.warning p{margin:.5em 0}.note{color:black;background-color:#f0f6fb;border-left:4px solid #428bca}.note h1,.note h2,.note h3,.note h4,.note h5,.note h6{color:#428bca}.warning{color:black;background-color:#fbf1f0;border-left:4px solid #c9302c}.warning h1,.warning h2,.warning h3,.warning h4,.warning h5,.warning h6{color:#c9302c}header{margin-top:24px}nav{position:fixed;top:24px;bottom:0;overflow-y:auto}nav .resource-group{padding:0}nav .resource-group .heading{position:relative}nav .resource-group .heading .chevron{position:absolute;top:12px;right:12px;opacity:.5}nav .resource-group .heading a{display:block;color:black;opacity:.7;border-left:2px solid transparent;margin:0}nav .resource-group .heading a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul{list-style-type:none;padding-left:0}nav ul a{display:block;font-size:13px;color:rgba(0,0,0,0.7);padding:8px 12px;border-top:1px solid #d9d9d9;border-left:2px solid transparent;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}nav ul a:hover{text-decoration:none;background-color:bad-color;border-left:2px solid black}nav ul>li{margin:0}nav ul>li:first-child{margin-top:-12px}nav ul>li:last-child{margin-bottom:-12px}nav ul ul a{padding-left:24px}nav ul ul li{margin:0}nav ul ul li:first-child{margin-top:0}nav ul ul li:last-child{margin-bottom:0}nav>div>div>ul>li:first-child>a{border-top:none}.preload *{transition:none !important}.pull-left{float:left}.pull-right{float:right}.badge{display:inline-block;float:right;min-width:10px;min-height:14px;padding:3px 7px;font-size:12px;color:#000;background-color:#f2f2f2;border-radius:10px;margin:-2px 0}.badge.get{color:#70bbe1;background-color:#d9edf7}.badge.head{color:#70bbe1;background-color:#d9edf7}.badge.options{color:#70bbe1;background-color:#d9edf7}.badge.put{color:#f0db70;background-color:#fcf8e3}.badge.patch{color:#f0db70;background-color:#fcf8e3}.badge.post{color:#93cd7c;background-color:#dff0d8}.badge.delete{color:#ce8383;background-color:#f2dede}.collapse-button{float:right}.collapse-button .close{display:none;color:#428bca;cursor:pointer}.collapse-button .open{color:#428bca;cursor:pointer}.collapse-button.show .close{display:inline}.collapse-button.show .open{display:none}.collapse-content{max-height:0;overflow:hidden;transition:max-height .3s ease-in-out}nav{width:220px}.container{max-width:940px;margin-left:auto;margin-right:auto}.container .row .content{margin-left:244px;width:696px}.container .row:after{content:'';display:block;clear:both}.container-fluid nav{width:22%}.container-fluid .row .content{margin-left:24%}.container-fluid.triple nav{width:16.5%;padding-right:1px}.container-fluid.triple .row .content{position:relative;margin-left:16.5%;padding-left:24px}.middle:before,.middle:after{content:'';display:table}.middle:after{clear:both}.middle{box-sizing:border-box;width:51.5%;padding-right:12px}.right{box-sizing:border-box;float:right;width:48.5%;padding-left:12px}.right a{color:#428bca}.right h1,.right h2,.right h3,.right h4,.right h5,.right p,.right div{color:white}.right pre{background-color:#1d1f21;border:1px solid #1d1f21}.right pre code{color:#c5c8c6}.right .description{margin-top:12px}.triple .resource-heading{font-size:125%}.definition{margin-top:12px;margin-bottom:12px}.definition .method{font-weight:bold}.definition .method.get{color:#2e8ab8}.definition .method.head{color:#2e8ab8}.definition .method.options{color:#2e8ab8}.definition .method.post{color:#56b82e}.definition .method.put{color:#b8a22e}.definition .method.patch{color:#b8a22e}.definition .method.delete{color:#b82e2e}.definition .uri{word-break:break-all;word-wrap:break-word}.definition .hostname{opacity:.5}.example-names{background-color:#eee;padding:12px;border-radius:6px}.example-names .tab-button{cursor:pointer;color:black;border:1px solid #ddd;padding:6px;margin-left:12px}.example-names .tab-button.active{background-color:#d5d5d5}.right .example-names{background-color:#444}.right .example-names .tab-button{color:white;border:1px solid #666;border-radius:6px}.right .example-names .tab-button.active{background-color:#5e5e5e}#nav-background{position:fixed;left:0;top:0;bottom:0;width:16.5%;padding-right:14.4px;background-color:#fbfbfb;border-right:1px solid #f0f0f0;z-index:-1}#right-panel-background{position:absolute;right:-12px;top:-12px;bottom:-12px;width:48.6%;background-color:#333;z-index:-1}@media (max-width:1200px){nav{width:198px}.container{max-width:840px}.container .row .content{margin-left:224px;width:606px}}@media (max-width:992px){nav{width:169.4px}.container{max-width:720px}.container .row .content{margin-left:194px;width:526px}}@media (max-width:768px){nav{display:none}.container{width:95%;max-width:none}.container .row .content,.container-fluid .row .content,.container-fluid.triple .row .content{margin-left:auto;margin-right:auto;width:95%}#nav-background{display:none}#right-panel-background{width:48.6%}}.back-to-top{position:fixed;z-index:1;bottom:0;right:24px;padding:4px 8px;color:rgba(0,0,0,0.5);background-color:#f2f2f2;text-decoration:none !important;border-top:1px solid #d9d9d9;border-left:1px solid #d9d9d9;border-right:1px solid #d9d9d9;border-top-left-radius:3px;border-top-right-radius:3px}.resource-group{padding:12px;margin-bottom:12px;background-color:white;border:1px solid #d9d9d9;border-radius:6px}.resource-group h2.group-heading,.resource-group .heading a{padding:12px;margin:-12px -12px 12px -12px;background-color:#f2f2f2;border-bottom:1px solid #d9d9d9;border-top-left-radius:6px;border-top-right-radius:6px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden}.triple .content .resource-group{padding:0;border:none}.triple .content .resource-group h2.group-heading,.triple .content .resource-group .heading a{margin:0 0 12px 0;border:1px solid #d9d9d9}nav .resource-group .heading a{padding:12px;margin-bottom:0}nav .resource-group .collapse-content{padding:0}.action{margin-bottom:12px;padding:12px 12px 0 12px;overflow:hidden;border:1px solid transparent;border-radius:6px}.action h4.action-heading{padding:6px 12px;margin:-12px -12px 12px -12px;border-bottom:1px solid transparent;border-top-left-radius:6px;border-top-right-radius:6px;overflow:hidden}.action h4.action-heading .name{float:right;font-weight:normal;padding:6px 0}.action h4.action-heading .method{padding:6px 12px;margin-right:12px;border-radius:3px;display:inline-block}.action h4.action-heading .method.get{color:#fff;background-color:#337ab7}.action h4.action-heading .method.head{color:#fff;background-color:#337ab7}.action h4.action-heading .method.options{color:#fff;background-color:#337ab7}.action h4.action-heading .method.put{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.patch{color:#fff;background-color:#ed9c28}.action h4.action-heading .method.post{color:#fff;background-color:#5cb85c}.action h4.action-heading .method.delete{color:#fff;background-color:#d9534f}.action h4.action-heading code{color:#444;background-color:#f5f5f5;border-color:#cfcfcf;font-weight:normal;word-break:break-all;display:inline-block;margin-top:2px}.action dl.inner{padding-bottom:2px}.action .title{border-bottom:1px solid white;margin:0 -12px -1px -12px;padding:12px}.action.get{border-color:#bce8f1}.action.get h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.head{border-color:#bce8f1}.action.head h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.options{border-color:#bce8f1}.action.options h4.action-heading{color:#337ab7;background:#d9edf7;border-bottom-color:#bce8f1}.action.post{border-color:#d6e9c6}.action.post h4.action-heading{color:#5cb85c;background:#dff0d8;border-bottom-color:#d6e9c6}.action.put{border-color:#faebcc}.action.put h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.patch{border-color:#faebcc}.action.patch h4.action-heading{color:#ed9c28;background:#fcf8e3;border-bottom-color:#faebcc}.action.delete{border-color:#ebccd1}.action.delete h4.action-heading{color:#d9534f;background:#f2dede;border-bottom-color:#ebccd1}</style></head><body class="preload"><a href="#top" class="text-muted back-to-top"><i class="fa fa-toggle-up"></i>&nbsp;Back to top</a><div class="container"><div class="row"><nav><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#authorize">Authorize</a></div><div class="collapse-content"><ul><li><a href="#authorize-authorize-session">Authorize::Session</a><ul><li><a href="#authorize-authorize-session-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a session</a></li><li><a href="#authorize-authorize-session-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Destroy a session</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#projects">Projects</a></div><div class="collapse-content"><ul><li><a href="#projects-projects">Projects</a><ul><li><a href="#projects-projects-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a project</a></li><li><a href="#projects-projects-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Update a project</a></li><li><a href="#projects-projects-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Destroy a project</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#task-comments">Task::Comments</a></div><div class="collapse-content"><ul><li><a href="#header-task-comments-[task-comment]">Task::Comments [task/comment]</a></li><li><a href="#task-comments-create-a-comment-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a comment</a></li><li><a href="#task-comments-destroy-a-comment-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Destroy a comment</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#task-complete">Task::Complete</a></div><div class="collapse-content"><ul><li><a href="#header-task-complete-[task-complete]">Task::Complete [task/complete]</a></li><li><a href="#task-complete-update-a-complete-task-patch"><span class="badge patch"><i class="fa fa-pencil"></i></span>Update a complete task</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#task-position">Task::Position</a></div><div class="collapse-content"><ul><li><a href="#header-task-position-[task-position]">Task::Position [task/position]</a></li><li><a href="#task-position-update-a-position-task-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Update a position task</a></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#tasks">Tasks</a></div><div class="collapse-content"><ul><li><a href="#tasks-tasks">Tasks</a><ul><li><a href="#tasks-tasks-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a task</a></li><li><a href="#tasks-tasks-put"><span class="badge put"><i class="fa fa-pencil"></i></span>Update a task</a></li><li><a href="#tasks-tasks-delete"><span class="badge delete"><i class="fa fa-times"></i></span>Destroy a task</a></li></ul></li></ul></div></div><div class="resource-group"><div class="heading"><div class="chevron"><i class="open fa fa-angle-down"></i></div><a href="#users">Users</a></div><div class="collapse-content"><ul><li><a href="#users-users-post"><span class="badge post"><i class="fa fa-plus"></i></span>Create a user</a></li></ul></div></div></nav><div class="content"><header><h1 id="top">API Documentation</h1></header><section id="authorize" class="resource-group"><h2 class="group-heading">Authorize <a href="#authorize" class="permalink">&para;</a></h2><div id="authorize-authorize-session" class="resource"><h3 class="resource-heading">Authorize::Session <a href="#authorize-authorize-session" class="permalink">&nbsp;&para;</a></h3><div id="authorize-authorize-session-post" class="action post"><h4 class="action-heading"><div class="name">Create a session</div><a href="#authorize-authorize-session-post" class="method post">POST</a><code class="uri">/api/v1/sign_in</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/sign_in</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create user by token</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/sign_in</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"damian@reichertjohnston.com"</span></span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"jeffrey@denesik.co"</span></span>,
   "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"Password1"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">csrf</span>": <span class="hljs-value"><span class="hljs-string">"EXAWW7mQy0mQ41vk5Q7xnz7ve6U8V7gQVjm2nn8+hrAo0kTGJUwivWH9phmqc7Ia5oZ0SvCdYM/EoiuYsRxwow=="</span></span>,
-  "<span class="hljs-attribute">access</span>": <span class="hljs-value"><span class="hljs-string">"eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjAzNDg2MTAsInVzZXJfaWQiOjEsInVpZCI6IjA3ZWUyMGYwLTJmZDMtNGIxOC04YTk1LWZiODI0NWUxNTcyOCIsImV4cCI6MTU2MDM0ODYxMCwicnVpZCI6ImIzMzJkYmJlLTU1Y2UtNDc2Yi04NDcxLTJiYWI4OGFmNzlmYiJ9.F56nebNui1uGiRaGEr6avDwpf_bgDMgQXsLs0TRDa5E"</span></span>,
-  "<span class="hljs-attribute">access_expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-12T17:10:10.000+03:00"</span></span>,
-  "<span class="hljs-attribute">refresh</span>": <span class="hljs-value"><span class="hljs-string">"eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjAzNDg2MTAsInVpZCI6ImIzMzJkYmJlLTU1Y2UtNDc2Yi04NDcxLTJiYWI4OGFmNzlmYiIsImV4cCI6MTU2MDk0OTgxMH0.zSEo8u9YouLESG4xiteBJgODjCGLbbzl-r03nvY-pdQ"</span></span>,
-  "<span class="hljs-attribute">refresh_expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-19T16:10:10.000+03:00"</span>
+  "<span class="hljs-attribute">csrf</span>": <span class="hljs-value"><span class="hljs-string">"J1PWh9WEEN8xjl0RW60m2eN6Pgz0Jz6ZptrPxca/1/1yZELhymku/eC+NvTtp2dZeUxgJjltCoq343yow0Q6fQ=="</span></span>,
+  "<span class="hljs-attribute">access</span>": <span class="hljs-value"><span class="hljs-string">"eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA0NDc1NjEsInVzZXJfaWQiOjEsInVpZCI6ImY3ZDBlNWVjLWFiM2MtNDgxMy1iNzNkLWMwODc3NGNhYjU3MyIsImV4cCI6MTU2MDQ0NzU2MSwicnVpZCI6IjI5OWI1OWVjLWI5YTYtNGRlMC04OTBmLTI4MmU1NjYwYjEwMCJ9.vqXOAWRCXDdnZPf6eiynd9UHx82FP54ogupO2EYtvVc"</span></span>,
+  "<span class="hljs-attribute">access_expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T20:39:21.000+03:00"</span></span>,
+  "<span class="hljs-attribute">refresh</span>": <span class="hljs-value"><span class="hljs-string">"eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA0NDc1NjEsInVpZCI6IjI5OWI1OWVjLWI5YTYtNGRlMC04OTBmLTI4MmU1NjYwYjEwMCIsImV4cCI6MTU2MTA0ODc2MX0.doH-OFSynEuChZivdqstD_7Ycj7uzVFCLCtvgpA_hNQ"</span></span>,
+  "<span class="hljs-attribute">refresh_expires_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-20T19:39:21.000+03:00"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create user by token</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/sign_in</code></p>
-</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/x-www-form-urlencoded</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>email=travis%40wisozk.com&amp;password=test</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/x-www-form-urlencoded</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>email=fabian%40brown.org&amp;password=test</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>401</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">error</span>": <span class="hljs-value"><span class="hljs-string">"Not authorized"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="authorize-authorize-session-delete" class="action delete"><h4 class="action-heading"><div class="name">Destroy a session</div><a href="#authorize-authorize-session-delete" class="method delete">DELETE</a><code class="uri">/api/v1/log_out</code></h4><h4>Example URI</h4><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/log_out</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>when destroy a session</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>DELETE</strong>  <code>/api/v1/log_out</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code><span class="hljs-string">"ok"</span></code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="projects" class="resource-group"><h2 class="group-heading">Projects <a href="#projects" class="permalink">&para;</a></h2><div id="projects-projects" class="resource"><h3 class="resource-heading">Projects <a href="#projects-projects" class="permalink">&nbsp;&para;</a></h3><div id="projects-projects-post" class="action post"><h4 class="action-heading"><div class="name">Create a project</div><a href="#projects-projects-post" class="method post">POST</a><code class="uri">/api/v1/projects</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/projects</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create project</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/projects</code></p>
@@ -41,24 +41,22 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/name"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">name</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]
-      </span>}
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="projects-projects-put" class="action put"><h4 class="action-heading"><div class="name">Update a project</div><a href="#projects-projects-put" class="method put">PUT</a><code class="uri">/api/v1/projects/{id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/projects/<span class="hljs-attribute" title="id">2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>update project</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>PUT</strong>  <code>/api/v1/projects/2</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"beatae"</span>
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"rerum"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"project"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"beatae"</span>
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"rerum"</span>
     </span>}</span>,
     "<span class="hljs-attribute">relationships</span>": <span class="hljs-value">{
       "<span class="hljs-attribute">user</span>": <span class="hljs-value">{
@@ -79,13 +77,11 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/name"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">name</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]
-      </span>}
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>not update project</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>PUT</strong>  <code>/api/v1/projects/5</code></p>
@@ -95,10 +91,9 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/projects/5"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="projects-projects-delete" class="action delete"><h4 class="action-heading"><div class="name">Destroy a project</div><a href="#projects-projects-delete" class="method delete">DELETE</a><code class="uri">/api/v1/projects/{id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/projects/<span class="hljs-attribute" title="id">5</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>delete project</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>DELETE</strong>  <code>/api/v1/projects/5</code></p>
@@ -107,17 +102,14 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/projects/8"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"8"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="task-comments" class="resource-group"><h2 class="group-heading">Task::Comments <a href="#task-comments" class="permalink">&para;</a></h2><h2 id="header-task-comments-[task-comment]">Task::Comments [task/comment] <a class="permalink" href="#header-task-comments-[task-comment]" aria-hidden="true">¶</a></h2>
 <div id="task-comments-create-a-comment" class="resource"><h3 class="resource-heading">Create a comment <a href="#task-comments-create-a-comment" class="permalink">&nbsp;&para;</a></h3><div id="task-comments-create-a-comment-post" class="action post"><h4 class="action-heading"><div class="name">Create a comment</div><a href="#task-comments-create-a-comment-post" class="method post">POST</a><code class="uri">/api/v1/tasks/{task_id}/comments</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/tasks/<span class="hljs-attribute" title="task_id">1</span>/comments</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>task_id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create comment</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/tasks/1/comments?id=1</code></p>
-</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">body</span>": <span class="hljs-value"><span class="hljs-string">"test comment"</span>
-</span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
+</div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">text/xml,application/xml,application/xhtml+xml,text/html;q=0.9,text/plain;q=0.8,image/png,*/*;q=0.5</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/x-www-form-urlencoded</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>body=test+comment</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"comment"</span></span>,
@@ -146,13 +138,11 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/body"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">body</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]
-      </span>}
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div><div id="task-comments-destroy-a-comment" class="resource"><h3 class="resource-heading">Destroy a comment <a href="#task-comments-destroy-a-comment" class="permalink">&nbsp;&para;</a></h3><div id="task-comments-destroy-a-comment-delete" class="action delete"><h4 class="action-heading"><div class="name">Destroy a comment</div><a href="#task-comments-destroy-a-comment-delete" class="method delete">DELETE</a><code class="uri">/api/v1/comments/{id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/comments/<span class="hljs-attribute" title="id">2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>destroy comment</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>DELETE</strong>  <code>/api/v1/comments/2</code></p>
@@ -161,10 +151,9 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/comments/4"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="task-complete" class="resource-group"><h2 class="group-heading">Task::Complete <a href="#task-complete" class="permalink">&para;</a></h2><h2 id="header-task-complete-[task-complete]">Task::Complete [task/complete] <a class="permalink" href="#header-task-complete-[task-complete]" aria-hidden="true">¶</a></h2>
@@ -174,8 +163,8 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"task"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"quaerat"</span></span>,
-      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T13:10:09.653Z"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"omnis"</span></span>,
+      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-14T16:39:21.101Z"</span></span>,
       "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
       "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-number">1</span>
     </span>}</span>,
@@ -197,8 +186,8 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"task"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"rem"</span></span>,
-      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T13:10:09.688Z"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"praesentium"</span></span>,
+      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-14T16:39:21.131Z"</span></span>,
       "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
       "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-number">1</span>
     </span>}</span>,
@@ -219,10 +208,9 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/complete/4"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="task-position" class="resource-group"><h2 class="group-heading">Task::Position <a href="#task-position" class="permalink">&para;</a></h2><h2 id="header-task-position-[task-position]">Task::Position [task/position] <a class="permalink" href="#header-task-position-[task-position]" aria-hidden="true">¶</a></h2>
@@ -234,8 +222,8 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"task"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"cum"</span></span>,
-      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T13:10:09.820Z"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"quasi"</span></span>,
+      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-14T16:39:21.257Z"</span></span>,
       "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
       "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-number">1</span>
     </span>}</span>,
@@ -259,8 +247,8 @@
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"task"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"praesentium"</span></span>,
-      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T13:10:09.862Z"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"quod"</span></span>,
+      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-14T16:39:21.302Z"</span></span>,
       "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
       "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-number">3</span>
     </span>}</span>,
@@ -281,22 +269,21 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/position/5"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"5"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="tasks" class="resource-group"><h2 class="group-heading">Tasks <a href="#tasks" class="permalink">&para;</a></h2><div id="tasks-tasks" class="resource"><h3 class="resource-heading">Tasks <a href="#tasks-tasks" class="permalink">&nbsp;&para;</a></h3><div id="tasks-tasks-post" class="action post"><h4 class="action-heading"><div class="name">Create a task</div><a href="#tasks-tasks-post" class="method post">POST</a><code class="uri">/api/v1/projects/{project_id}/tasks</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/projects/<span class="hljs-attribute" title="project_id">1</span>/tasks</span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>project_id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>1</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create task</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/projects/1/tasks?id=1</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"et"</span>
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"ea"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"1"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"task"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"et"</span></span>,
-      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T13:10:10.324Z"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"ea"</span></span>,
+      "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-14T16:39:21.748Z"</span></span>,
       "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
       "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-number">1</span>
     </span>}</span>,
@@ -317,10 +304,9 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/projects/3/tasks"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">""</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>not create task</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/projects/3/tasks?id=3</code></p>
@@ -330,25 +316,23 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/name"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">name</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]
-      </span>}
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="tasks-tasks-put" class="action put"><h4 class="action-heading"><div class="name">Update a task</div><a href="#tasks-tasks-put" class="method put">PUT</a><code class="uri">/api/v1/tasks/{id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method put">PUT</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/tasks/<span class="hljs-attribute" title="id">2</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>2</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>update task</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>PUT</strong>  <code>/api/v1/tasks/2</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"sunt"</span></span>,
+  "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"ex"</span></span>,
   "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-17T00:00:00.000+03:00"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>200</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">data</span>": <span class="hljs-value">{
     "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"2"</span></span>,
     "<span class="hljs-attribute">type</span>": <span class="hljs-value"><span class="hljs-string">"task"</span></span>,
     "<span class="hljs-attribute">attributes</span>": <span class="hljs-value">{
-      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"sunt"</span></span>,
+      "<span class="hljs-attribute">name</span>": <span class="hljs-value"><span class="hljs-string">"ex"</span></span>,
       "<span class="hljs-attribute">deadline</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-16T21:00:00.000Z"</span></span>,
       "<span class="hljs-attribute">complete</span>": <span class="hljs-value"><span class="hljs-literal">false</span></span>,
       "<span class="hljs-attribute">position</span>": <span class="hljs-value"><span class="hljs-number">1</span>
@@ -370,10 +354,9 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/tasks/4"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"4"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>not update task</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>PUT</strong>  <code>/api/v1/tasks/4</code></p>
@@ -383,13 +366,11 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/name"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">name</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]
-      </span>}
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div><div id="tasks-tasks-delete" class="action delete"><h4 class="action-heading"><div class="name">Destroy a task</div><a href="#tasks-tasks-delete" class="method delete">DELETE</a><code class="uri">/api/v1/tasks/{id}</code></h4><h4>Example URI</h4><div class="definition"><span class="method delete">DELETE</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/tasks/<span class="hljs-attribute" title="id">5</span></span></div><div class="title"><strong>URI Parameters</strong><div class="collapse-button show"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><dl class="inner"><dt>id</dt><dd><code>number</code>&nbsp;<span class="required">(required)</span>&nbsp;<span class="text-muted example"><strong>Example:&nbsp;</strong><span>5</span></span></dd></dl></div><div class="title"><strong>Request&nbsp;&nbsp;<code>success destroy task</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>DELETE</strong>  <code>/api/v1/tasks/5</code></p>
@@ -398,41 +379,43 @@
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"/api/v1/tasks/7"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"not_found"</span></span>,
-      "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-string">"7"</span>
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value"><span class="hljs-string">"Not found"</span>
     </span>}
   ]
 </span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section><section id="users" class="resource-group"><h2 class="group-heading">Users <a href="#users" class="permalink">&para;</a></h2><div id="users-users" class="resource"><h3 class="resource-heading">Users <a href="#users-users" class="permalink">&nbsp;&para;</a></h3><div id="users-users-post" class="action post"><h4 class="action-heading"><div class="name">Create a user</div><a href="#users-users-post" class="method post">POST</a><code class="uri">/api/v1/sign_up</code></h4><h4>Example URI</h4><div class="definition"><span class="method post">POST</span>&nbsp;<span class="uri"><span class="hostname"></span>/api/v1/sign_up</span></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create user by token</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/sign_up</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
-  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"teddykuvalis@bradtke.net"</span></span>,
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"kory@schneider.co"</span></span>,
   "<span class="hljs-attribute">password</span>": <span class="hljs-value"><span class="hljs-string">"Password1"</span></span>,
   "<span class="hljs-attribute">password_confirmation</span>": <span class="hljs-value"><span class="hljs-string">"Password1"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>201</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">id</span>": <span class="hljs-value"><span class="hljs-number">1</span></span>,
-  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"teddykuvalis@bradtke.net"</span></span>,
-  "<span class="hljs-attribute">password_digest</span>": <span class="hljs-value"><span class="hljs-string">"$2a$04$5/W/6NQQ/eMMV8EirGTgxenNyiMe1kREJat4zcIOoQ0nLLW3bxbY."</span></span>,
-  "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-12T13:10:10.535Z"</span></span>,
-  "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-12T13:10:10.535Z"</span>
+  "<span class="hljs-attribute">email</span>": <span class="hljs-value"><span class="hljs-string">"kory@schneider.co"</span></span>,
+  "<span class="hljs-attribute">password_digest</span>": <span class="hljs-value"><span class="hljs-string">"$2a$04$q6E7Lz4UAgQAl9lFuwZX0eAoZhhahubms2lZCNMOvMfkhlPNPtU7e"</span></span>,
+  "<span class="hljs-attribute">created_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T16:39:21.962Z"</span></span>,
+  "<span class="hljs-attribute">updated_at</span>": <span class="hljs-value"><span class="hljs-string">"2019-06-13T16:39:21.962Z"</span>
 </span>}</code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Request&nbsp;&nbsp;<code>create user by token</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><div class="description"><p><strong>POST</strong>  <code>/api/v1/sign_up</code></p>
 </div><h5>Headers</h5><pre><code><span class="hljs-attribute">Accept</span>: <span class="hljs-string">application/json</span><br><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json</span></code></pre><div style="height: 1px;"></div></div></div><div class="title"><strong>Response&nbsp;&nbsp;<code>422</code></strong><div class="collapse-button"><span class="close">Hide</span><span class="open">Show</span></div></div><div class="collapse-content"><div class="inner"><h5>Headers</h5><pre><code><span class="hljs-attribute">Content-Type</span>: <span class="hljs-string">application/json; charset=utf-8</span></code></pre><div style="height: 1px;"></div><h5>Body</h5><pre><code>{
   "<span class="hljs-attribute">errors</span>": <span class="hljs-value">[
     {
       "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes"</span>
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/password"</span>
       </span>}</span>,
-      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">{
-        "<span class="hljs-attribute">password</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]</span>,
-        "<span class="hljs-attribute">email</span>": <span class="hljs-value">[
-          <span class="hljs-string">"can't be blank"</span>
-        ]
-      </span>}
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
+    </span>},
+    {
+      "<span class="hljs-attribute">source</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">pointer</span>": <span class="hljs-value"><span class="hljs-string">"data/attributes/email"</span>
+      </span>}</span>,
+      "<span class="hljs-attribute">detail</span>": <span class="hljs-value">[
+        <span class="hljs-string">"can't be blank"</span>
+      ]
     </span>}
   ]
-</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 12 Jun 2019</p><script>/* eslint-env browser */
+</span>}</code></pre><div style="height: 1px;"></div></div></div></div></div></section></div></div></div><p style="text-align: center;" class="text-muted">Generated by&nbsp;<a href="https://github.com/danielgtaylor/aglio" class="aglio">aglio</a>&nbsp;on 13 Jun 2019</p><script>/* eslint-env browser */
 /* eslint quotes: [2, "single"] */
 'use strict';
 
