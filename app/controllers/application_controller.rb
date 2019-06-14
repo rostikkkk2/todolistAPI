@@ -17,7 +17,7 @@ class ApplicationController < ActionController::API
   end
 
   def not_found_error
-    service = ExceptionErrorService.new(request.path, 'Not found')
+    service = ExceptionErrorService.new(request.path, I18n.t('statuses.not_found'))
     render json: ErrorSerializer.new(service), status: :not_found
   end
 
@@ -29,7 +29,7 @@ class ApplicationController < ActionController::API
   private
 
   def not_authorized
-    render json: { error: 'Not authorized' }, status: :unauthorized
+    render json: { error: I18n.t('statuses.not_authorized') }, status: :unauthorized
   end
 
   def current_user

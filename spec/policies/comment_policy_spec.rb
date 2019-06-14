@@ -6,7 +6,7 @@ RSpec.describe CommentPolicy, type: :policy do
   let(:resolved_scope) { described_class::Scope.new(user, Comment.all).resolve }
   let(:comment) { create(:comment) }
   let(:comment1) { create(:comment) }
-  let(:actions) { [:create, :destroy] }
+  let(:actions) { %i[create destroy] }
 
   context 'when belongs to user' do
     let(:user) { comment.task.project.user }

@@ -2,7 +2,7 @@ class Api::V1::TasksController < ApplicationController
   before_action :authorize_access_request!
 
   def create
-    task = authorize current_project.tasks.new(task_params.merge(deadline: Time.now.next_day))
+    task = authorize current_project.tasks.new(task_params)
     if task.save
       render json: TaskSerializer.new(task).serialized_json, status: :created
     else
