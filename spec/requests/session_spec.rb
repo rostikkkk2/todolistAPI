@@ -39,9 +39,8 @@ RSpec.describe 'Session', type: :request do
     before { delete api_v1_log_out_path, headers: headers, as: :json }
 
     it 'when destroy a session', :dox do
+      expect(response.cookies[JWTSessions.access_cookie]).not_to be_present
       expect(response).to have_http_status :ok
     end
-
-    it { expect(response.cookies[JWTSessions.access_cookie]).not_to be_present }
   end
 end

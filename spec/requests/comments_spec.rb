@@ -12,19 +12,23 @@ RSpec.describe 'Comments', type: :request do
     include Docs::V1::Comments::Create
 
     context 'when success' do
-      let(:params) do
-        {
-          photo: fixture_file_upload('image_for_comment.jpg'),
-          body: 'test comment'
-        }
-      end
-
-      before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
+      let(:params) { { body: Faker::Lorem.word } }
+      let(:request_comment) { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
 
       it 'create comment', :dox do
+        expect { request_comment }.to change(Comment, :count).from(0).to(1)
         expect(response).to be_created
-        expect(task.comments.first.photo.path.split('/').last).to eq('image_for_comment.jpg')
-        expect(task.comments.count).to eq(1)
+      end
+
+      context 'with file' do
+        let(:params) { { body: Faker::Lorem.word, photo: fixture_file_upload('image_for_comment.jpg') } }
+
+        before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
+
+        it 'create comment' do
+          expect(response).to be_created
+          expect(task.comments.first.photo.path.split('/').last).to eq('image_for_comment.jpg')
+        end
       end
     end
 
@@ -35,23 +39,23 @@ RSpec.describe 'Comments', type: :request do
 
       it 'not create comment', :dox do
         expect(response).to have_http_status :unprocessable_entity
+        expect { response }.not_to change(Comment, :count)
       end
-      it { expect(task.comments).to be_empty }
     end
   end
 
   describe 'DELETE #destroy' do
     include Docs::V1::Comments::Destroy
 
-    let(:comment) { create(:comment, task_id: task.id) }
+    let!(:comment) { create(:comment, task_id: task.id) }
 
     context 'when success destroy comment' do
-      before { delete api_v1_comment_path(comment), headers: headers, as: :json }
+      let(:request_comment) { delete api_v1_comment_path(comment), headers: headers, as: :json }
 
       it 'destroy comment', :dox do
+        expect { request_comment }.to change(Comment, :count).from(1).to(0)
         expect(response).to have_http_status :no_content
       end
-      it { expect(task.comments).to be_empty }
     end
 
     context 'when failed destroy comment' do
@@ -61,8 +65,8 @@ RSpec.describe 'Comments', type: :request do
 
       it 'not destroy comment', :dox do
         expect(response).to have_http_status :not_found
+        expect(task.comments).not_to be_empty
       end
-      it { expect(task.comments).not_to be_empty }
     end
   end
 end

@@ -9,13 +9,12 @@ RSpec.describe 'Users', type: :request do
     context 'when success' do
       let(:user_params) { attributes_for(:user) }
       let(:params) { { email: user_params[:email], password: user_params[:password], password_confirmation: user_params[:password] } }
-
-      before { post api_v1_sign_up_path, params: params, as: :json }
+      let(:request_user) { post api_v1_sign_up_path, params: params, as: :json }
 
       it 'create user by token', :dox do
+        expect { request_user }.to change(User, :count).from(0).to(1)
         expect(response).to be_created
       end
-      it { expect(User.count).to eq(1) }
     end
 
     context 'when failed' do
@@ -25,9 +24,9 @@ RSpec.describe 'Users', type: :request do
       before { post api_v1_sign_up_path, params: params, as: :json }
 
       it 'create user by token', :dox do
+        expect(User.all).to be_empty
         expect(response).to have_http_status :unprocessable_entity
       end
-      it { expect(User.all).to be_empty }
     end
   end
 end
