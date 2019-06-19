@@ -9,7 +9,7 @@ require 'pundit/matchers'
 require 'support/helpers'
 require 'rspec/rails'
 require 'database_cleaner'
-require 'faker'
+require 'ffaker'
 
 Dir[Rails.root.join('spec/docs/**/*.rb')].each { |f| require f }
 

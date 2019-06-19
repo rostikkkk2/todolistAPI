@@ -10,7 +10,7 @@ RSpec.describe 'Projects', type: :request do
       let(:user) { create(:user) }
 
       let(:headers) { authorization_header_for(user) }
-      let(:params) { { name: Faker::Lorem.word } }
+      let(:params) { { name: FFaker::Lorem.word } }
       let(:request_project) { post api_v1_projects_path, params: params, headers: headers, as: :json }
 
       it 'create project', :dox do
@@ -41,7 +41,7 @@ RSpec.describe 'Projects', type: :request do
     let(:headers) { authorization_header_for(user) }
 
     context 'when success' do
-      let(:params) { { name: Faker::Lorem.word } }
+      let(:params) { { name: FFaker::Lorem.word } }
       let(:request_project) { put api_v1_project_path(project), params: params, headers: headers, as: :json }
 
       it 'update project', :dox do
@@ -62,7 +62,7 @@ RSpec.describe 'Projects', type: :request do
 
     context 'when failed 404' do
       let(:failed_project_id) { project.id + 1 }
-      let(:params) { { name: Faker::Lorem.word } }
+      let(:params) { { name: FFaker::Lorem.word } }
 
       before { put api_v1_project_path(failed_project_id), params: params, headers: headers, as: :json }
 
@@ -90,11 +90,12 @@ RSpec.describe 'Projects', type: :request do
     end
 
     context 'when failed delete' do
-      let!(:project1) { create(:project, user_id: user.id) }
+      let(:project1) { create(:project, user_id: user.id) }
 
       before { delete api_v1_project_path(failed_project_id), headers: headers, as: :json }
 
       it 'not found', :dox do
+        project1
         expect(user.projects).not_to be_empty
         expect(response).to have_http_status :not_found
       end

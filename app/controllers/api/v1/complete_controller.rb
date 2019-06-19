@@ -3,6 +3,6 @@ class Api::V1::CompleteController < ApplicationController
 
   def update
     current_task.toggle! :complete
-    render json: TaskSerializer.new(current_task).serialized_json, status: :ok
+    render json: TaskSerializer.new(current_task).serialized_json
   end
 end

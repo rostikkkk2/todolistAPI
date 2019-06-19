@@ -35,7 +35,7 @@ RSpec.describe 'Position Task', type: :request do
       end
     end
 
-    context 'when failure' do
+    context 'when failure 404' do
       let(:fail_task_id) { 5 }
       let(:params) { {} }
 
@@ -43,6 +43,16 @@ RSpec.describe 'Position Task', type: :request do
 
       it 'return 404', :dox do
         expect(response).to have_http_status :not_found
+      end
+    end
+
+    context 'when failure 422' do
+      let(:params) { { position: FFaker::Lorem.word } }
+
+      before { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
+
+      it 'return 422', :dox do
+        expect(response).to have_http_status :unprocessable_entity
       end
     end
   end

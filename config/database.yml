@@ -4,8 +4,8 @@ default: &default
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: rostik
-  password: rostik
+  username: <%= Rails.application.credentials.postgres[:name] %>
+  password: <%= Rails.application.credentials.postgres[:password] %>
 
 
 development:

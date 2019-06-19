@@ -3,9 +3,8 @@ Rails.application.routes.draw do
 
   namespace :api do
     namespace :v1 do
-      post 'sign_up', controller: :users, action: :create
-      post 'sign_in', controller: :session, action: :create
-      delete 'log_out', controller: :session, action: :destroy
+      resources :users, only: :create
+      resources :session, only: %i[create destroy]
 
       resources :projects do
         resources :tasks, shallow: true do

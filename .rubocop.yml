@@ -1,5 +1,14 @@
 require: rubocop-rspec
 
+AllCops:
+  TargetRubyVersion: 2.5.3
+  Exclude:
+    - 'bin/**/*'
+    - 'config/**/*'
+    - 'db/migrate/**/*'
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+
 Metrics/LineLength:
   Max: 120
 
@@ -9,6 +18,12 @@ Documentation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+RSpec/NestedGroups:
+  Max: 4
+
+RSpec/LetSetup:
+  Enabled: true
+
 Style/ClassAndModuleChildren:
   Enabled: false
 
@@ -17,10 +32,3 @@ Metrics/BlockLength:
 
 RSpec/MultipleExpectations:
   Enabled: false
-
-AllCops:
-  Exclude:
-    - 'bin/**/*'
-    - 'config/**/*'
-    - 'db/migrate/**/*'
-    - 'db/schema.rb'

@@ -12,7 +12,7 @@ RSpec.describe 'Comments', type: :request do
     include Docs::V1::Comments::Create
 
     context 'when success' do
-      let(:params) { { body: Faker::Lorem.word } }
+      let(:params) { { body: FFaker::Lorem.word } }
       let(:request_comment) { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
 
       it 'create comment', :dox do
@@ -20,8 +20,8 @@ RSpec.describe 'Comments', type: :request do
         expect(response).to be_created
       end
 
-      context 'with file' do
-        let(:params) { { body: Faker::Lorem.word, photo: fixture_file_upload('image_for_comment.jpg') } }
+      context 'when with file' do
+        let(:params) { { body: FFaker::Lorem.word, photo: fixture_file_upload('image_for_comment.jpg') } }
 
         before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
 

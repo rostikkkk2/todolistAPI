@@ -42,6 +42,14 @@ jobs:
             bundle exec rake db:create db:schema:load --trace
             bundle exec rake db:migrate
       - run:
+          name: rails_best_practices
+          command: |
+            bundle exec rails_best_practices . -c config/rails_best_practices.yml
+      - run:
+          name: rubocop
+          command: |
+            bundle exec rubocop
+      - run:
           name: run tests
           command: |
             mkdir /tmp/test-results

@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :project do
-    name { Faker::Lorem.word }
+    name { FFaker::Lorem.word }
     user
   end
 end

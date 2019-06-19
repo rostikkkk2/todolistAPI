@@ -6,11 +6,11 @@
 ## Authorize::Session [/session]
 
 
-### Create a session [POST /api/v1/sign_in]
+### Create a session [POST /api/v1/session]
 
 
 + Request create user by token
-**POST**&nbsp;&nbsp;`/api/v1/sign_in`
+**POST**&nbsp;&nbsp;`/api/v1/session`
 
     + Headers
 
@@ -20,8 +20,8 @@
     + Body
 
             {
-              "email": "elmopfeffer@schmidtmacgyver.biz",
-              "password": "Password1"
+              "email": "myrta@klocko.com",
+              "password": "cQG1OtgyeE"
             }
 
 + Response 200
@@ -33,15 +33,15 @@
     + Body
 
             {
-              "csrf": "tJoP9oXwrwP559PzNCEyMSFNjBeZKb5T6DlII+3gZa8gaELX9YQuo6Tq4teP17mhX6KtSDHOFtIB8wziyKk0Nw==",
-              "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA1MjYyMjUsInVzZXJfaWQiOjEsInVpZCI6Ijc3YjEwMDFmLThkY2YtNDk4OS1iYzdmLTI4OTliN2VlY2VmOCIsImV4cCI6MTU2MDUyNjIyNSwicnVpZCI6Ijc3ZmQyN2ZmLWVmMDgtNDMwYS05YzJhLThkYzljMjBlNTg5NyJ9.-q_xv119S-0-9s37Qj_FakJAAv9LZqqQm3j7ZaPiJeA",
-              "access_expires_at": "2019-06-14T18:30:25.000+03:00",
-              "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA1MjYyMjUsInVpZCI6Ijc3ZmQyN2ZmLWVmMDgtNDMwYS05YzJhLThkYzljMjBlNTg5NyIsImV4cCI6MTU2MTEyNzQyNX0.Xn335E4_Et1tCHgk-QYTx5AzUJJ4ypkebdXZ958ekNA",
-              "refresh_expires_at": "2019-06-21T17:30:25.000+03:00"
+              "csrf": "BzKJbMb1o2hSeeH81ynb8/jAw4vTkRsn3OfFaZ6Tr6ObGjjv2B2wT/1/g6B3JSIz45+aqN4Uo+3icQ35PLUmFg==",
+              "access": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA5NTM3MDgsInVzZXJfaWQiOjEsInVpZCI6Ijg3ZTcxZGQxLTAxNWQtNDdjNS1iZjhkLWI2Mjg2N2NhNGNmMCIsImV4cCI6MTU2MDk1MzcwOCwicnVpZCI6IjViMTZhNDA4LTQ0ZDEtNDI1OC05MzBiLWQ5OTViYzQzYjUyZiJ9.PFPxrGyGZHe-qiZDKACNg0B77_TZGoh-Hoff9FrHhfI",
+              "access_expires_at": "2019-06-19T17:15:08.000+03:00",
+              "refresh": "eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE1NjA5NTM3MDgsInVpZCI6IjViMTZhNDA4LTQ0ZDEtNDI1OC05MzBiLWQ5OTViYzQzYjUyZiIsImV4cCI6MTU2MTU1NDkwOH0.XMNk4YbhbffIXAl7yYcLZDQy9Sc-K_G1OxOxphX7VwU",
+              "refresh_expires_at": "2019-06-26T16:15:08.000+03:00"
             }
 
 + Request create user by token
-**POST**&nbsp;&nbsp;`/api/v1/sign_in`
+**POST**&nbsp;&nbsp;`/api/v1/session`
 
     + Headers
 
@@ -50,7 +50,7 @@
 
     + Body
 
-            email=burton%40kunde.io&password=test
+            email=elvira.howell%40gerholdhuel.info&password=yB3EB5is0
 
 + Response 401
 
@@ -64,11 +64,13 @@
               "error": "Not authorized"
             }
 
-### Destroy a session [DELETE /api/v1/log_out]
+### Destroy a session [DELETE /api/v1/session/{id}]
 
++ Parameters
+    + id: `3` (number, required)
 
 + Request when destroy a session
-**DELETE**&nbsp;&nbsp;`/api/v1/log_out`
+**DELETE**&nbsp;&nbsp;`/api/v1/session/3`
 
     + Headers
 
@@ -105,7 +107,7 @@
     + Body
 
             {
-              "name": "sit"
+              "name": "nihil"
             }
 
 + Response 201
@@ -121,7 +123,7 @@
                 "id": "1",
                 "type": "project",
                 "attributes": {
-                  "name": "sit"
+                  "name": "nihil"
                 },
                 "relationships": {
                   "user": {
@@ -190,7 +192,7 @@
     + Body
 
             {
-              "name": "quibusdam"
+              "name": "qui"
             }
 
 + Response 200
@@ -206,7 +208,7 @@
                 "id": "2",
                 "type": "project",
                 "attributes": {
-                  "name": "quibusdam"
+                  "name": "qui"
                 },
                 "relationships": {
                   "user": {
@@ -270,7 +272,7 @@
     + Body
 
             {
-              "name": "doloremque"
+              "name": "laudantium"
             }
 
 + Response 404
@@ -308,7 +310,7 @@
 + Response 204
 
 + Request not found
-**DELETE**&nbsp;&nbsp;`/api/v1/projects/8`
+**DELETE**&nbsp;&nbsp;`/api/v1/projects/7`
 
     + Headers
 
@@ -327,7 +329,7 @@
               "errors": [
                 {
                   "source": {
-                    "pointer": "/api/v1/projects/8"
+                    "pointer": "/api/v1/projects/7"
                   },
                   "detail": "Not found"
                 }
@@ -355,7 +357,7 @@
 
     + Body
 
-            body=omnis
+            body=distinctio
 
 + Response 201
 
@@ -370,7 +372,7 @@
                 "id": "1",
                 "type": "comment",
                 "attributes": {
-                  "body": "omnis",
+                  "body": "distinctio",
                   "photo": {
                     "url": null,
                     "thumb": {
@@ -498,8 +500,8 @@
                 "id": "1",
                 "type": "task",
                 "attributes": {
-                  "name": "iusto",
-                  "deadline": "2019-06-15T00:00:00.000Z",
+                  "name": "saepe",
+                  "deadline": "2019-06-20T00:00:00.000Z",
                   "complete": true,
                   "position": 1
                 },
@@ -540,8 +542,8 @@
                 "id": "2",
                 "type": "task",
                 "attributes": {
-                  "name": "accusamus",
-                  "deadline": "2019-06-15T00:00:00.000Z",
+                  "name": "et",
+                  "deadline": "2019-06-20T00:00:00.000Z",
                   "complete": false,
                   "position": 1
                 },
@@ -626,8 +628,8 @@
                 "id": "2",
                 "type": "task",
                 "attributes": {
-                  "name": "est",
-                  "deadline": "2019-06-15T00:00:00.000Z",
+                  "name": "id",
+                  "deadline": "2019-06-20T00:00:00.000Z",
                   "complete": false,
                   "position": 1
                 },
@@ -674,8 +676,8 @@
                 "id": "5",
                 "type": "task",
                 "attributes": {
-                  "name": "quaerat",
-                  "deadline": "2019-06-15T00:00:00.000Z",
+                  "name": "quod",
+                  "deadline": "2019-06-20T00:00:00.000Z",
                   "complete": false,
                   "position": 3
                 },
@@ -726,6 +728,39 @@
               ]
             }
 
++ Request return 422
+**PUT**&nbsp;&nbsp;`/api/v1/position/11`
+
+    + Headers
+
+            Accept: application/json
+            Content-Type: application/json
+
+    + Body
+
+            {
+              "position": "quis"
+            }
+
++ Response 422
+
+    + Headers
+
+            Content-Type: application/json; charset=utf-8
+
+    + Body
+
+            {
+              "errors": [
+                {
+                  "source": {
+                    "pointer": "/api/v1/position/11"
+                  },
+                  "detail": "Wrong param position"
+                }
+              ]
+            }
+
 # Group Tasks
 
 
@@ -748,7 +783,8 @@
     + Body
 
             {
-              "name": "quasi"
+              "name": "accusantium",
+              "deadline": "2019-06-20T16:15:08.609+03:00"
             }
 
 + Response 201
@@ -764,8 +800,8 @@
                 "id": "1",
                 "type": "task",
                 "attributes": {
-                  "name": "quasi",
-                  "deadline": "2019-06-15T14:30:25.260Z",
+                  "name": "accusantium",
+                  "deadline": "2019-06-20T13:15:08.609Z",
                   "complete": false,
                   "position": 1
                 },
@@ -867,8 +903,8 @@
     + Body
 
             {
-              "name": "quisquam",
-              "deadline": "2019-06-17T00:00:00.000+03:00"
+              "name": "ipsam",
+              "deadline": "2019-06-24T00:00:00.000+03:00"
             }
 
 + Response 200
@@ -884,8 +920,8 @@
                 "id": "2",
                 "type": "task",
                 "attributes": {
-                  "name": "quisquam",
-                  "deadline": "2019-06-16T21:00:00.000Z",
+                  "name": "ipsam",
+                  "deadline": "2019-06-23T21:00:00.000Z",
                   "complete": false,
                   "position": 1
                 },
@@ -1019,11 +1055,11 @@
 ## Users [/users]
 
 
-### Create a user [POST /api/v1/sign_up]
+### Create a user [POST /api/v1/users]
 
 
 + Request create user by token
-**POST**&nbsp;&nbsp;`/api/v1/sign_up`
+**POST**&nbsp;&nbsp;`/api/v1/users`
 
     + Headers
 
@@ -1033,9 +1069,9 @@
     + Body
 
             {
-              "email": "willie@quitzonwhite.biz",
-              "password": "Password1",
-              "password_confirmation": "Password1"
+              "email": "mickey@jaskolski.biz",
+              "password": "xpPEcSENy3MI",
+              "password_confirmation": "xpPEcSENy3MI"
             }
 
 + Response 201
@@ -1048,14 +1084,14 @@
 
             {
               "id": 1,
-              "email": "willie@quitzonwhite.biz",
-              "password_digest": "$2a$04$SrKGqqM4qXd4suaJsxJD4Oix79A7Bi2S1UXPKpnq7HmC7/2I6clhG",
-              "created_at": "2019-06-14T14:30:25.694Z",
-              "updated_at": "2019-06-14T14:30:25.694Z"
+              "email": "mickey@jaskolski.biz",
+              "password_digest": "$2a$04$c86yDtohvq43PcYMlMmUpebsi/2L7X4p56YunLihTDVfQeJWFalum",
+              "created_at": "2019-06-19T13:15:09.156Z",
+              "updated_at": "2019-06-19T13:15:09.156Z"
             }
 
 + Request create user by token
-**POST**&nbsp;&nbsp;`/api/v1/sign_up`
+**POST**&nbsp;&nbsp;`/api/v1/users`
 
     + Headers
 

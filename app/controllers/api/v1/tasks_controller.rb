@@ -2,7 +2,7 @@ class Api::V1::TasksController < ApplicationController
   before_action :authorize_access_request!
 
   def create
-    task = authorize current_project.tasks.new(task_params)
+    task = current_project.tasks.new(task_params)
     if task.save
       render json: TaskSerializer.new(task).serialized_json, status: :created
     else
@@ -12,14 +12,14 @@ class Api::V1::TasksController < ApplicationController
 
   def update
     if current_task.update(task_params)
-      render json: TaskSerializer.new(current_task).serialized_json, status: :ok
+      render json: TaskSerializer.new(current_task).serialized_json
     else
       entity_error(:unprocessable_entity, current_task.errors)
     end
   end
 
   def destroy
-    authorize current_task.destroy
+    current_task.destroy
     head :no_content
   end
 

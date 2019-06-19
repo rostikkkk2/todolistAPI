@@ -7,7 +7,7 @@ class Api::V1::SessionController < ApplicationController
     return not_authorized unless user.authenticate(params[:password])
 
     session = JWTSessions::Session.new(payload: { user_id: user.id }, refresh_by_access_allowed: true)
-    render json: session.login, status: :ok
+    render json: session.login
   end
 
   def destroy

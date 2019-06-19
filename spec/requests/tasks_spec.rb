@@ -13,7 +13,9 @@ RSpec.describe 'Tasks', type: :request do
     context 'when success' do
       let(:attributes) { attributes_for(:task) }
       let(:params) { { name: attributes[:name], deadline: Time.now.next_day } }
-      let(:request_task) { post api_v1_project_tasks_path(project.id, id: project), headers: headers, params: params, as: :json }
+      let(:request_task) do
+        post api_v1_project_tasks_path(project.id, id: project), headers: headers, params: params, as: :json
+      end
 
       it 'create task', :dox do
         expect { request_task }.to change(Task, :count).from(0).to(1)

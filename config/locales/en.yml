@@ -2,3 +2,5 @@ en:
   statuses:
     not_found: Not found
     not_authorized: Not authorized
+  message:
+    wrong_params_position: Wrong param position

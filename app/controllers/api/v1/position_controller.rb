@@ -3,6 +3,10 @@ class Api::V1::PositionController < ApplicationController
 
   def update
     service = PositionTaskService.new(current_task, params)
-    render json: TaskSerializer.new(service.current_task).serialized_json, status: :ok if service.call
+    if service.call
+      render json: TaskSerializer.new(service.current_task).serialized_json
+    else
+      exception_error(:unprocessable_entity, service.error)
+    end
   end
 end
