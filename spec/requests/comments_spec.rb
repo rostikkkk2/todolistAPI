@@ -13,22 +13,23 @@ RSpec.describe 'Comments', type: :request do
 
     context 'when success' do
       let(:params) { { body: FFaker::Lorem.word } }
-      let(:request_comment) { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
+
+      subject { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
 
       it 'create comment', :dox do
-        expect { request_comment }.to change(Comment, :count).from(0).to(1)
+        expect { subject }.to change(Comment, :count).from(0).to(1)
         expect(response).to be_created
       end
+    end
 
-      context 'when with file' do
-        let(:params) { { body: FFaker::Lorem.word, photo: fixture_file_upload('image_for_comment.jpg') } }
+    context 'when create with file' do
+      let(:params) { { body: FFaker::Lorem.word, photo: fixture_file_upload('image_for_comment.jpg') } }
 
-        before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
+      before { post api_v1_task_comments_path(task, id: task), headers: headers, params: params }
 
-        it 'create comment' do
-          expect(response).to be_created
-          expect(task.comments.first.photo.path.split('/').last).to eq('image_for_comment.jpg')
-        end
+      it 'create comment' do
+        expect(response).to be_created
+        expect(task.comments.first.photo.path.split('/').last).to eq('image_for_comment.jpg')
       end
     end
 
@@ -50,16 +51,16 @@ RSpec.describe 'Comments', type: :request do
     let!(:comment) { create(:comment, task_id: task.id) }
 
     context 'when success destroy comment' do
-      let(:request_comment) { delete api_v1_comment_path(comment), headers: headers, as: :json }
+      subject { delete api_v1_comment_path(comment), headers: headers, as: :json }
 
       it 'destroy comment', :dox do
-        expect { request_comment }.to change(Comment, :count).from(1).to(0)
+        expect { subject }.to change(Comment, :count).from(1).to(0)
         expect(response).to have_http_status :no_content
       end
     end
 
     context 'when failed destroy comment' do
-      let(:failed_comment_id) { comment.id + 1 }
+      let(:failed_comment_id) { 0 }
 
       before { delete api_v1_comment_path(failed_comment_id), headers: headers, as: :json }
 

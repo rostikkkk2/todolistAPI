@@ -1,6 +1,5 @@
 class Api::V1::SessionController < ApplicationController
   before_action :authorize_access_request!, only: :destroy
-  before_action :authorize_refresh_by_access_request!, only: :update
 
   def create
     user = User.find_by!(email: params[:email])

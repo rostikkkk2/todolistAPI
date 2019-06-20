@@ -6,6 +6,8 @@ module ErrorHandler
     rescue_from ActiveRecord::RecordNotFound, with: :not_found_error
   end
 
+  private
+
   def not_found_error
     exception_error(:not_found, I18n.t('statuses.not_found'))
   end

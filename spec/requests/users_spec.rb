@@ -10,13 +10,16 @@ RSpec.describe 'Users', type: :request do
       let(:user_params) { attributes_for(:user) }
       let(:params) do
         {
-          email: user_params[:email], password: user_params[:password], password_confirmation: user_params[:password]
+          email: user_params[:email],
+          password: user_params[:password],
+          password_confirmation: user_params[:password]
         }
       end
-      let(:request_user) { post api_v1_users_path, params: params, as: :json }
+
+      subject { post api_v1_users_path, params: params, as: :json }
 
       it 'create user by token', :dox do
-        expect { request_user }.to change(User, :count).from(0).to(1)
+        expect { subject }.to change(User, :count).from(0).to(1)
         expect(response).to be_created
       end
     end

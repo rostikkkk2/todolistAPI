@@ -17,7 +17,6 @@ gem 'puma', '~> 3.11'
 gem 'pundit'
 gem 'rack-cors'
 gem 'rails', '~> 5.2.3'
-gem 'rails_best_practices'
 gem 'redis', '~> 4.0'
 
 # Reduces boot times through caching; required in config/boot.rb
@@ -32,6 +31,7 @@ end
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'rails_best_practices', require: false
   gem 'rubocop', '~> 0.65.0', require: false
   gem 'rubocop-rspec', '~> 1.32', require: false
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
@@ -43,8 +43,6 @@ group :test do
   gem 'database_cleaner'
   gem 'dox', '~> 1.1', require: false
   gem 'factory_bot_rails'
-  gem 'json_matchers', '~> 0.4.0'
-  gem 'pundit-matchers', '~> 1.6.0'
   gem 'shoulda-matchers'
   gem 'simplecov'
 end

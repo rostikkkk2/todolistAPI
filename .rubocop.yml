@@ -12,17 +12,17 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 
+RSpec/LeadingSubject:
+  Enabled: false
+
+RSpec/NamedSubject:
+  Enabled: false
+
 Documentation:
   Enabled: false
 
 Style/FrozenStringLiteralComment:
   Enabled: false
-
-RSpec/NestedGroups:
-  Max: 4
-
-RSpec/LetSetup:
-  Enabled: true
 
 Style/ClassAndModuleChildren:
   Enabled: false

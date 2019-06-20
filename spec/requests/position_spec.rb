@@ -15,10 +15,11 @@ RSpec.describe 'Position Task', type: :request do
 
     context 'when change position success up' do
       let(:params) { { position: :up } }
-      let(:request_position) { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
+
+      subject { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
 
       it 'task position up', :dox do
-        expect { request_position }.to change { Task.find_by(id: task1.id).position }
+        expect { subject }.to change { Task.find_by(id: task1.id).position }
           .from(1).to(2).and change { Task.find_by(id: task2.id).position }.from(2).to(1)
         expect(response).to have_http_status :ok
       end
@@ -26,10 +27,11 @@ RSpec.describe 'Position Task', type: :request do
 
     context 'when change position success down' do
       let(:params) { { position: :down } }
-      let(:request_position) { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
+
+      subject { put api_v1_position_path(task2), params: params, headers: headers, as: :json }
 
       it 'task position down', :dox do
-        expect { request_position }.to change { Task.find_by(id: task2.id).position }
+        expect { subject }.to change { Task.find_by(id: task2.id).position }
           .from(2).to(3).and change { Task.find_by(id: task3.id).position }.from(3).to(2)
         expect(response).to have_http_status :ok
       end

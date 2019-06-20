@@ -9,20 +9,19 @@ class PositionTaskService
   def initialize(current_task, params)
     @params = params
     @current_task = current_task
-    @error = I18n.t('message.wrong_params_position') unless valid_params?
   end
 
   def call
-    return if error
+    validate_params
 
-    update_position if current_task
+    update_position unless error
   end
 
-  def valid_params?
-    POSITION_ACTIONS.include?(params[:position].to_sym)
+  def validate_params
+    @error = I18n.t('message.wrong_params_position') unless POSITION_ACTIONS.value?(params[:position])
   end
 
   def update_position
-    params[:position].include?(POSITION_ACTIONS[:up]) ? current_task.move_higher : current_task.move_lower
+    params[:position] == POSITION_ACTIONS[:up] ? current_task.move_higher : current_task.move_lower
   end
 end

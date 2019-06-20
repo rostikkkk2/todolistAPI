@@ -12,31 +12,34 @@ RSpec.describe 'Complete', type: :request do
 
     context 'when success complete' do
       let!(:task) { create(:task, project_id: project.id) }
-      let(:request_task) { patch api_v1_complete_path(task), headers: headers, as: :json }
+
+      subject { patch api_v1_complete_path(task), headers: headers, as: :json }
 
       it 'when do complete task', :dox do
-        expect { request_task }.to change { Task.first.complete }.from(false).to(true)
+        expect { subject }.to change { Task.first.complete }.from(false).to(true)
         expect(response).to have_http_status :ok
       end
     end
 
     context 'when success not complete' do
       let!(:task_complete) { create(:task, project_id: project.id, complete: true) }
-      let(:request_task) { patch api_v1_complete_path(task_complete), headers: headers, as: :json }
+
+      subject { patch api_v1_complete_path(task_complete), headers: headers, as: :json }
 
       it 'when do not complete task', :dox do
-        expect { request_task }.to change { Task.first.complete }.from(true).to(false)
+        expect { subject }.to change { Task.first.complete }.from(true).to(false)
         expect(response).to have_http_status :ok
       end
     end
 
     context 'when failed' do
-      let!(:task) { create(:task, project_id: project.id) }
-      let(:fail_id_task) { task.id + 1 }
+      let(:task) { create(:task) }
+      let(:fail_id_task) { 0 }
 
       before { patch api_v1_complete_path(fail_id_task), headers: headers, as: :json }
 
       it 'fail complete task', :dox do
+        task
         expect(response).to have_http_status :not_found
         expect(Task.first.complete).not_to eq(true)
       end

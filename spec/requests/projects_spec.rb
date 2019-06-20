@@ -11,10 +11,11 @@ RSpec.describe 'Projects', type: :request do
 
       let(:headers) { authorization_header_for(user) }
       let(:params) { { name: FFaker::Lorem.word } }
-      let(:request_project) { post api_v1_projects_path, params: params, headers: headers, as: :json }
+
+      subject { post api_v1_projects_path, params: params, headers: headers, as: :json }
 
       it 'create project', :dox do
-        expect { request_project }.to change(Project, :count).from(0).to(1)
+        expect { subject }.to change(Project, :count).from(0).to(1)
         expect(response).to be_created
       end
     end
@@ -42,10 +43,11 @@ RSpec.describe 'Projects', type: :request do
 
     context 'when success' do
       let(:params) { { name: FFaker::Lorem.word } }
-      let(:request_project) { put api_v1_project_path(project), params: params, headers: headers, as: :json }
+
+      subject { put api_v1_project_path(project), params: params, headers: headers, as: :json }
 
       it 'update project', :dox do
-        expect { request_project }.to change { user.projects.first.name }.from(project.name).to(params[:name])
+        expect { subject }.to change { user.projects.first.name }.from(project.name).to(params[:name])
         expect(response).to have_http_status :ok
       end
     end
@@ -61,7 +63,7 @@ RSpec.describe 'Projects', type: :request do
     end
 
     context 'when failed 404' do
-      let(:failed_project_id) { project.id + 1 }
+      let(:failed_project_id) { 0 }
       let(:params) { { name: FFaker::Lorem.word } }
 
       before { put api_v1_project_path(failed_project_id), params: params, headers: headers, as: :json }
@@ -78,7 +80,7 @@ RSpec.describe 'Projects', type: :request do
     let(:user) { create(:user) }
     let(:project) { create(:project, user_id: user.id) }
     let(:headers) { authorization_header_for(user) }
-    let(:failed_project_id) { project.id + 1 }
+    let(:failed_project_id) { 0 }
 
     context 'when success delete' do
       before { delete api_v1_project_path(project), headers: headers, as: :json }
