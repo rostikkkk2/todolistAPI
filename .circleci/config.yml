@@ -1,0 +1,62 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/repo
+    docker:
+      - image: circleci/ruby:2.5.3-node-browsers
+        environment:
+          PG_HOST: localhost
+          PG_USER: root
+      - image: circleci/postgres:11
+        environment:
+          POSTGRES_USER: rostik
+          POSTGRES_PASSWORD: rostik
+          POSTGRES_DB: test_todolistAPI
+      - image: redis
+
+    steps:
+      - checkout
+
+       # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "Gemfile.lock" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+      - run:
+          name: install dependencies
+          command: |
+            bundle install --jobs=4 --retry=3 --path vendor/bundle
+      - save_cache:
+          paths:
+            - ./vendor/bundle
+          key: v1-dependencies-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Set up DB
+          command: |
+            bundle exec rake db:create db:schema:load --trace
+            bundle exec rake db:migrate
+      - run:
+          name: rails_best_practices
+          command: |
+            bundle exec rails_best_practices . -c config/rails_best_practices.yml
+      - run:
+          name: rubocop
+          command: |
+            bundle exec rubocop
+      - run:
+          name: run tests
+          command: |
+            mkdir /tmp/test-results
+            TEST_FILES="$(circleci tests glob "spec/**/*_spec.rb" | circleci tests split --split-by=timings)"
+             bundle exec rspec --format progress \
+                            --out /tmp/test-results/rspec.xml \
+                            --format progress \
+                            $TEST_FILES
+      # collect reports
+      - store_test_results:
+          path: /tmp/test-results
+      - store_artifacts:
+          path: /tmp/test-results
+          destination: test-results

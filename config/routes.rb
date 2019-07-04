@@ -1,3 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  root 'application#docs'
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, only: :create
+      resources :session, only: %i[create destroy]
+
+      resources :projects do
+        resources :tasks, shallow: true do
+          resources :complete, only: :update
+          resources :position, only: :update
+          resources :comments, only: %i[create destroy]
+        end
+      end
+    end
+  end
 end
